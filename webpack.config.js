@@ -22,6 +22,12 @@ const plugins = [
       chunks: ['app'],
       filename: 'examples/stacks.html'
   }),
+  new HtmlWebpackPlugin({
+    template: 'examples/queues.html',
+    inject: true,
+    chunks: ['app'],
+    filename: 'examples/queues.html'
+  }),
   new webpack.LoaderOptionsPlugin({
     options: {
       tslint: {

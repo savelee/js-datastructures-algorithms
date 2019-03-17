@@ -1,9 +1,9 @@
 /*
  * Stack DataStructure
  * @author Lee Boonstra
- * 
+ *
  *      # What do we know about Stacks?
- *      It's a sequential data structure with LIFO. Last In - First Out principle. 
+ *      It's a sequential data structure with LIFO. Last In - First Out principle.
  *      (and FILO First in - Last Out)
  *      Compare this to a deck of cards. The last card on top, is the first
  *      card to be removed from the pile. The base card, will be last.
@@ -20,7 +20,7 @@ export class Stack {
     constructor() {
         // Based on an Array
         this.items = [];
-        // Set the size to 0;
+        // Set the total to 0;
         this.total = 0;
     }
 
@@ -31,7 +31,10 @@ export class Stack {
      * @param item any
      */
     push(item: any) {
-        this.items.push(item);
+        // this.items.push(item);
+        // We can only add one at a time
+        this.items[this.total] = item;
+        this.total++;
     }
 
     /*
@@ -41,8 +44,15 @@ export class Stack {
      * @return removed item
      */
     pop() {
-        if (this.size() > 0)
-            return this.items.pop();
+        let item = undefined;
+        if (!this.isEmpty()) {
+            this.total--;
+            // return this.items.pop();
+            // manual remove
+            item = this.items[this.total];
+            delete this.items[this.total];
+        }
+        return item;
     }
 
     /*
@@ -52,7 +62,9 @@ export class Stack {
     * @return removed item
     */
     peek() {
-        let i = this.size() - 1;
+        if (this.isEmpty()) return undefined;
+
+        let i = this.total - 1;
         return this.items[i];
     }
 
@@ -62,7 +74,7 @@ export class Stack {
     * @returns Boolean
     */
     isEmpty() {
-        return (this.size() === 0);
+        return (this.total === 0);
     }
 
     /*
@@ -70,22 +82,29 @@ export class Stack {
     * Take O(1) time. We do not run any loop in any of these operations.
     */
     clear() {
-        if (this.size() > 0)
+        if (!this.isEmpty()) {
             this.items = [];
+            this.total = 0;
+        }
     }
 
     /*
     * Return the total number of items from the stack
+    * Take O(1) time. We do not run any loop in any of these operations.
+    *
     * @return number
     */
     size() {
-        this.total = this.items.length;
-
+        // Note: in this example this.items.length would be wrong
+        // since we are removing values from the array
+        // the array is not shifting.
         return this.total;
     }
 
     /*
      * Print stack
+     * Take O(1) time. We do not run any loop in any of these operations.
+     *
      * @return items
      */
     values() {

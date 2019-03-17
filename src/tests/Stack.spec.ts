@@ -13,7 +13,7 @@ describe('stack.push()/stack.values(): Create a Stack with 4 items', () => {
     expect(deck.values()).toEqual(testArray);
   });
   it('stack.size(): Stack size is 4', () => {
-    expect(deck.size() === 4).toBeTruthy();
+    expect(deck.size()).toEqual(4);
   });
   it('stack.isEmpty(): Stack is not empty', () => {
     expect(deck.isEmpty()).toBeFalsy();
@@ -24,7 +24,7 @@ describe('stack.push()/stack.values(): Create a Stack with 4 items', () => {
 });
 
 
-describe('deck.pop(): Remove top item', () => {
+describe('stack.pop(): Remove top item', () => {
 
   const deck = new Stack();
   const testArray = ['Timber Wolf', 'Dire Mole', 'Fire Fly', 'The Lich King'];
@@ -35,7 +35,7 @@ describe('deck.pop(): Remove top item', () => {
   deck.pop();
 
   it('stack.size(): Stack size is 3', () => {
-    expect(deck.size() === 3).toBeTruthy();
+    expect(deck.size()).toEqual(3);
   });
   it('stack.isEmpty(): Stack is not empty:', () => {
     expect(deck.isEmpty()).toBeFalsy();
@@ -55,7 +55,7 @@ describe('stack.clear(): Clear the Stack', () => {
   deck.clear();
 
   it('stack.size(): Stack size is 0', () => {
-    expect(deck.size() === 0).toBeTruthy();
+    expect(deck.size()).toEqual(0);
   });
   it('stack.isEmpty(): Stack is empty:', () => {
     expect(deck.isEmpty()).toBeTruthy();

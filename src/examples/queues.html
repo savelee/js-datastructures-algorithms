@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    Examples: Queues
+  </title>
+</head>
+
+<body>
+  Look in JS Console.
+</body>
+<script>
+const line = new Library.Queue();
+
+console.log(line.isEmpty()); // true
+
+line.add('Lee - 0');
+line.add('Michele - 1');
+line.add('David - 2');
+line.add('Jake - 3');
+
+console.log(line.values()); // ['0) Lee - 0', '1) Michele - 1', '2) David - 2', '3) Jake - 3']
+console.log(line.size()); // 4
+console.log(line.isEmpty()); // false
+console.log(line.peek()); // 'Lee 0'
+
+line.remove(); 
+
+console.log(line.values()); // ['0) Michele - 1', '1) David - 2', '2) Jake - 3']
+console.log(line.size()); // 3
+console.log(line.isEmpty()); // false
+console.log(line.peek()); // 'Michele 1'
+
+line.remove(); 
+
+console.log(line.values()); // ['0) David - 2', '1) Jake - 3']
+console.log(line.size()); // 2
+console.log(line.isEmpty()); // false
+console.log(line.peek()); // 'David 2'
+
+line.clear();
+
+console.log(line.size()); // 0
+console.log(line.isEmpty()); // true
+
+</script>
+</html>

@@ -1,6 +1,6 @@
 export declare class Stack {
     private items;
-    private total;
+    private count;
     constructor();
     push(item: any): void;
     pop(): any;
