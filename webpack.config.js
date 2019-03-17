@@ -28,6 +28,12 @@ const plugins = [
     chunks: ['app'],
     filename: 'examples/queues.html'
   }),
+  new HtmlWebpackPlugin({
+    template: 'examples/linkedlists.html',
+    inject: true,
+    chunks: ['app'],
+    filename: 'examples/linkedlists.html'
+  }),
   new webpack.LoaderOptionsPlugin({
     options: {
       tslint: {

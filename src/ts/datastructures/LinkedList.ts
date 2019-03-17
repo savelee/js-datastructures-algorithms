@@ -5,6 +5,6 @@ export class LinkedList {
     }
 
     init() {
-        console.log('LinkedList');
+        console.log('//TODO LinkedList');
     }
 }
