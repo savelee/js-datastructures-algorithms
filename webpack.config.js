@@ -1,56 +1,80 @@
-// @ts-check
-/* eslint-disable */
 const webpack = require('webpack');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');;
 const path = require('path');
-const env = require('yargs').argv.env;
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const nodeEnv = process.env.NODE_ENV || 'development';
+const isProd = nodeEnv === 'production';
 
-let libraryName = 'PacktDataStructuresAlgorithms';
+const plugins = [
+  new webpack.DefinePlugin({
+    'process.env': {
+      NODE_ENV: JSON.stringify(nodeEnv)
+    }
+  }),
+  new HtmlWebpackPlugin({
+    title: 'Typescript Webpack Starter',
+    template: '!!ejs-loader!src/index.html'
+  }),
+  new webpack.LoaderOptionsPlugin({
+    options: {
+      tslint: {
+        emitErrors: true,
+        failOnHint: true
+      }
+    }
+  })
+];
 
-let plugins = [],
-  outputFile;
-
-if (env === 'build') {
-  // plugins.push(new UglifyJsPlugin({ minimize: true }));
-  outputFile = libraryName + '.min.js';
-} else {
-  outputFile = libraryName + '.js';
-}
-
-const config = {
-  entry: __dirname + '/src/js/index.js',
-  devtool: 'source-map',
+var config = {
+  devtool: isProd ? 'hidden-source-map' : 'source-map',
+  context: path.resolve('./src'),
+  entry: {
+    app: './index.ts'
+  },
   output: {
-    path: __dirname + '/examples',
-    filename: outputFile,
-    library: libraryName,
-    libraryTarget: 'umd',
-    umdNamedDefine: true
+    path: path.resolve('./dist'),
+    filename: '[name].bundle.js'
   },
   module: {
     rules: [
       {
-        test: /(\.jsx|\.js)$/,
-        loader: 'babel-loader',
-        exclude: /(node_modules|bower_components)/
-      }
-    ]
+        test: /\.(js|ts)$/,
+        use: [
+          {
+            loader: `expose-loader`,
+            options: 'Library'
+          }
+        ]
+      },
+      {
+        enforce: 'pre',
+        test: /\.tsx?$/,
+        exclude: [/\/node_modules\//],
+        use: ['awesome-typescript-loader', 'source-map-loader']
+      },
+      !isProd
+        ? {
+            test: /\.(js|ts)$/,
+            loader: 'istanbul-instrumenter-loader',
+            exclude: [/\/node_modules\//],
+            query: {
+              esModules: true
+            }
+          }
+        : null,
+      { test: /\.html$/, loader: 'html-loader' },
+      { test: /\.css$/, loaders: ['style-loader', 'css-loader'] }
+    ].filter(Boolean)
   },
   resolve: {
-    modules: [path.resolve('./node_modules'), path.resolve('./src/js')],
-    extensions: ['.json', '.js']
+    extensions: ['.ts', '.js']
   },
-  optimization: {
-    minimizer: [
-      // we specify a custom UglifyJsPlugin here to get source maps in production
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true
-      })
-    ]
+  plugins: plugins,
+  devServer: {
+    contentBase: path.join(__dirname, 'dist/'),
+    compress: true,
+    port: 3000,
+    hot: true
   }
- // plugins: plugins
 };
 
 module.exports = config;
