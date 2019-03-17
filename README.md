@@ -3,8 +3,8 @@ in TypeScript / JavaScript by Lee Boonstra
 
 These Data Structures are exposed on global object: `Library`.
 
-* Stack
-* Queue
+* [https://github.com/savelee/js-datastructures-algorithms/blob/master/src/ts/datastructures/Stack.ts](Stack)
+* [https://github.com/savelee/js-datastructures-algorithms/blob/master/src/ts/datastructures/Queue.ts](Queue)
 * LinkedList
 * Set
 * Map
