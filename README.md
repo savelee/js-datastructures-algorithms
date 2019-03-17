@@ -1,6 +1,8 @@
 # Data Structures & Algorithms Playground
 in TypeScript / JavaScript by Lee Boonstra
 
+These Data Structures are exposed on global object: `Library`.
+
 * Stack
 * Queue
 * LinkedList
