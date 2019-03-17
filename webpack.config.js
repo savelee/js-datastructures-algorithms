@@ -11,8 +11,16 @@ const plugins = [
     }
   }),
   new HtmlWebpackPlugin({
-    title: 'Typescript Webpack Starter',
-    template: '!!ejs-loader!src/index.html'
+    template: 'index.html',
+    inject: true,
+    chunks: ['app'],
+    filename: 'index.html'
+  }),
+  new HtmlWebpackPlugin({
+      template: 'examples/stacks.html',
+      inject: true,
+      chunks: ['app'],
+      filename: 'examples/stacks.html'
   }),
   new webpack.LoaderOptionsPlugin({
     options: {
