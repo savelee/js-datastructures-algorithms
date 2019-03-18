@@ -16,13 +16,20 @@ These Data Structures are exposed on global object: `Library`.
 
 * src/ts/datastructures - Data Structures in TypeScript
 * src/examples/ - Implementation examples. 
+* tests/ - Unit Tests to verify written code
 
 ## Setup
 
 Run `npm install`
 
+## Test
+
+Run `npm run test`
+
 ## Start
 
 Run `npm start`
 Visit http://localhost:3000
+
+
 
