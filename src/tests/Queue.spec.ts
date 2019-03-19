@@ -24,7 +24,7 @@ describe('queue.add()/queue.values(): Create a Queue with 4 items', () => {
 });
 
 
-describe('line.remove(): Remove the first item in queue', () => {
+describe('queue.remove(): Remove the first item in queue', () => {
 
     const line = new Queue();
     line.add('Lee');
@@ -44,7 +44,7 @@ describe('line.remove(): Remove the first item in queue', () => {
     });
 });
 
-describe('line.clear(): Clear the Queue', () => {
+describe('queue.clear(): Clear the Queue', () => {
 
     const line = new Queue();
     line.add('Lee');
