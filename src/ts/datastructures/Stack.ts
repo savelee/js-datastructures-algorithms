@@ -1,5 +1,6 @@
 /*
- * Stack DataStructure
+ * Stack Data Structure
+ * @module Stack
  * @author Lee Boonstra
  *
  *      # What do we know about Stacks?
@@ -14,7 +15,7 @@
  *      The deck of cards in Hearthstone.
  */
 export class Stack {
-    private items: Array<any>;
+    private items: any[];
     private total: number;
 
     constructor() {
@@ -28,7 +29,7 @@ export class Stack {
      * Add a new item to the top of the stack.
      * Take O(1) time. We do not run any loop in any of these operations.
      *
-     * @param item any
+     * @param {any} item - item
      */
     push(item: any) {
         // this.items.push(item);
@@ -41,9 +42,9 @@ export class Stack {
      * Pops / Removes the top item from the stack.
      * Take O(1) time. We do not run any loop in any of these operations.
      *
-     * @return removed item
+     * @return {any} item - removed item
      */
-    pop() {
+    pop(): any {
         let item = undefined;
         if (!this.isEmpty()) {
             this.total--;
@@ -59,9 +60,9 @@ export class Stack {
     * Return the top item from the stack.
     * Take O(1) time. We do not run any loop in any of these operations.
     *
-    * @return removed item
+    * @return {item} item - top item
     */
-    peek() {
+    peek(): any {
         if (this.isEmpty()) return undefined;
 
         let i = this.total - 1;
@@ -71,9 +72,10 @@ export class Stack {
     /*
     * Check if the Stack is empty. Returns true if the stack has no items
     * Take O(1) time. We do not run any loop in any of these operations.
-    * @returns Boolean
+    *
+    * @returns {boolean} isEmpty - if the Stack is empty or not
     */
-    isEmpty() {
+    isEmpty(): Boolean {
         return (this.total === 0);
     }
 
@@ -92,9 +94,9 @@ export class Stack {
     * Return the total number of items from the stack
     * Take O(1) time. We do not run any loop in any of these operations.
     *
-    * @return number
+    * @return {number} size - total length of Stack
     */
-    size() {
+    size(): number {
         // Note: in this example this.items.length would be wrong
         // since we are removing values from the array
         // the array is not shifting.
@@ -105,9 +107,9 @@ export class Stack {
      * Print stack
      * Take O(1) time. We do not run any loop in any of these operations.
      *
-     * @return items
+     * @return {array} - array with items
      */
-    values() {
+    values(): any[] {
         return this.items;
     }
 }

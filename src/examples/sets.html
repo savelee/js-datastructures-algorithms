@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    Examples: Sets
+  </title>
+</head>
+
+<body>
+  Look in JS Console.
+</body>
+<script>
+let set = new Library.Set();
+let otherSet = new Library.Set();
+
+set.add('lee');
+set.add('michele');
+set.add('jake');
+
+otherSet.add('lee');
+otherSet.add('michele');
+otherSet.add('jake');
+otherSet.add('maarten');
+
+let union = set.union(otherSet);
+let intersection = set.intersection(otherSet);
+let difference = set.difference(otherSet);
+let isSubset = set.isSubset(otherSet);
+
+console.log(union);
+console.log(intersection);
+console.log(difference);
+console.log(isSubset);
+
+// set.add('michele');
+
+
+
+//console.log(set.size());
+//console.log(set);
+
+/*
+console.log("Keys");
+console.log(set.keys());
+
+console.log("Values");
+console.log(set.values());
+
+console.log("For Each");
+set.forEach(function(k, v, s){
+    console.log(k, v, s);
+});
+*/
+
+</script>
+</html>

@@ -34,6 +34,12 @@ const plugins = [
     chunks: ['app'],
     filename: 'examples/linkedlists.html'
   }),
+  new HtmlWebpackPlugin({
+    template: 'examples/sets.html',
+    inject: true,
+    chunks: ['app'],
+    filename: 'examples/sets.html'
+  }),
   new webpack.LoaderOptionsPlugin({
     options: {
       tslint: {

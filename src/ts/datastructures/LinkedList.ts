@@ -1,8 +1,5 @@
-import { notDeepEqual } from "assert";
-import { stringify } from "querystring";
-
 /*
- * LinkedList DataStructure
+ * LinkedList Data Structure
  * @author Lee Boonstra
  *
  *      # What do we know about LinkedLists?

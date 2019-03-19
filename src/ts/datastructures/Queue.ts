@@ -1,5 +1,5 @@
 /*
- * Queue DataStructure
+ * Queue Data Structure
  * @author Lee Boonstra
  *
  *      # What do we know about Queues?
@@ -12,7 +12,7 @@
  *      Printer Queue.
  */
 export class Queue {
-    private items: Array<any>;
+    private items: any[];
     private total: number; // total items in the queue
     private count: number; // item count who will be served first
 
@@ -43,7 +43,7 @@ export class Queue {
      *
      * @return removed item
      */
-    remove() {
+    remove(): any {
         let item = undefined;
         if (!this.isEmpty()) {
             // which item will be first in the queue
@@ -65,7 +65,7 @@ export class Queue {
     *
     * @return removed item
     */
-    peek() {
+    peek(): any {
         if (this.isEmpty()) return undefined;
 
         return this.items[this.count];
@@ -77,7 +77,7 @@ export class Queue {
     *
     * @return Boolean
     */
-    isEmpty() {
+    isEmpty(): Boolean {
         return (this.total === 0);
     }
 
@@ -99,7 +99,7 @@ export class Queue {
     *
     * @return number
     */
-    size() {
+    size(): number {
         // Note: in this example this.items.length would be wrong
         // since we are removing values from the array
         // the array is not shifting.
@@ -113,7 +113,7 @@ export class Queue {
      *
      * @return items
      */
-    values() {
+    values(): any[] {
         return this.items;
     }
 }
