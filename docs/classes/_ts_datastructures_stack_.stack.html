@@ -69,6 +69,30 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Stack Data Structure</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>class</dt>
+						<dd><p>Stack</p>
+						</dd>
+						<dt>author</dt>
+						<dd><p>Lee Boonstra</p>
+							<pre><code> <span class="hljs-comment"># What do we know about Stacks?</span>
+ It's a sequential data structure <span class="hljs-keyword">with</span> LIFO. <span class="hljs-keyword">Last</span> <span class="hljs-keyword">In</span> - <span class="hljs-keyword">First</span> <span class="hljs-keyword">Out</span> principle.
+ (<span class="hljs-keyword">and</span> FILO <span class="hljs-keyword">First</span> <span class="hljs-keyword">in</span> - <span class="hljs-keyword">Last</span> <span class="hljs-keyword">Out</span>)
+ Compare this <span class="hljs-keyword">to</span> a deck <span class="hljs-keyword">of</span> cards. The <span class="hljs-keyword">last</span> card <span class="hljs-keyword">on</span> top, <span class="hljs-keyword">is</span> the <span class="hljs-keyword">first</span>
+ card <span class="hljs-keyword">to</span> be removed <span class="hljs-keyword">from</span> the pile. The base card, will be last.
+
+ <span class="hljs-comment">## Real world examples in Software Engineering?</span>
+ The browser history. Clipboard history.
+ <span class="hljs-keyword">In</span> the Sencha Ext JS framework there was a card layout / animation.
+ The deck <span class="hljs-keyword">of</span> cards <span class="hljs-keyword">in</span> Hearthstone.</code></pre></dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -121,7 +145,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Stack.ts#L19">ts/datastructures/Stack.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Stack.ts#L19">ts/datastructures/Stack.ts:19</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="_ts_datastructures_stack_.stack.html" class="tsd-signature-type">Stack</a></h4>
@@ -137,7 +161,7 @@
 					<div class="tsd-signature tsd-kind-icon">items<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Stack.ts#L18">ts/datastructures/Stack.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Stack.ts#L18">ts/datastructures/Stack.ts:18</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -147,7 +171,7 @@
 					<div class="tsd-signature tsd-kind-icon">total<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Stack.ts#L19">ts/datastructures/Stack.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Stack.ts#L19">ts/datastructures/Stack.ts:19</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -164,9 +188,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Stack.ts#L86">ts/datastructures/Stack.ts:86</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Stack.ts#L86">ts/datastructures/Stack.ts:86</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Removes all the items from the Stack
+									Take O(1) time. We do not run any loop in any of these operations.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -181,10 +211,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Stack.ts#L78">ts/datastructures/Stack.ts:78</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Stack.ts#L78">ts/datastructures/Stack.ts:78</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Check if the Stack is empty. Returns true if the stack has no items
+									Take O(1) time. We do not run any loop in any of these operations.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Boolean</span></h4>
+							<p>isEmpty - if the Stack is empty or not</p>
 						</li>
 					</ul>
 				</section>
@@ -198,10 +235,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Stack.ts#L65">ts/datastructures/Stack.ts:65</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Stack.ts#L65">ts/datastructures/Stack.ts:65</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return the top item from the stack.
+									Take O(1) time. We do not run any loop in any of these operations.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<p>item - top item</p>
 						</li>
 					</ul>
 				</section>
@@ -215,10 +259,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Stack.ts#L47">ts/datastructures/Stack.ts:47</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Stack.ts#L47">ts/datastructures/Stack.ts:47</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Pops / Removes the top item from the stack.
+									Take O(1) time. We do not run any loop in any of these operations.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<p>item - removed item</p>
 						</li>
 					</ul>
 				</section>
@@ -232,13 +283,22 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Stack.ts#L34">ts/datastructures/Stack.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Stack.ts#L34">ts/datastructures/Stack.ts:34</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add a new item to the top of the stack.
+									Take O(1) time. We do not run any loop in any of these operations.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>item: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>item</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -255,10 +315,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Stack.ts#L99">ts/datastructures/Stack.ts:99</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Stack.ts#L99">ts/datastructures/Stack.ts:99</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return the total number of items from the stack
+									Take O(1) time. We do not run any loop in any of these operations.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>size - total length of Stack</p>
 						</li>
 					</ul>
 				</section>
@@ -272,10 +339,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Stack.ts#L112">ts/datastructures/Stack.ts:112</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Stack.ts#L112">ts/datastructures/Stack.ts:112</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Print stack
+									Take O(1) time. We do not run any loop in any of these operations.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h4>
+							<ul>
+								<li>array with items</li>
+							</ul>
 						</li>
 					</ul>
 				</section>

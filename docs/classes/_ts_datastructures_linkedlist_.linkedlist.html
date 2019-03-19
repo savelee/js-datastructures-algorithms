@@ -69,6 +69,40 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>LinkedList Data Structure</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>class</dt>
+						<dd><p>LinkedList</p>
+						</dd>
+						<dt>author</dt>
+						<dd><p>Lee Boonstra</p>
+							<pre><code> <span class="hljs-comment"># What do we know about LinkedLists?</span>
+
+ It's a sequential data structure and has
+ similarities <span class="hljs-keyword">with</span> an <span class="hljs-built_in">Array</span> (also called a <span class="hljs-keyword">List</span>).
+ <span class="hljs-keyword">In</span> other languages, an <span class="hljs-built_in">Array</span> has a predefined
+ size. Inserting <span class="hljs-keyword">and</span> Removing items can be
+ expensive. Because elements needs <span class="hljs-keyword">to</span> be shifted
+ over. A LinkedList <span class="hljs-keyword">is</span> a dynamic <span class="hljs-keyword">data</span> structure. We
+ can <span class="hljs-keyword">add</span> <span class="hljs-keyword">and</span> remove items <span class="hljs-keyword">from</span> it <span class="hljs-keyword">and</span> it will grow
+ <span class="hljs-keyword">when</span> required. Elements <span class="hljs-keyword">are</span> <span class="hljs-keyword">not</span> placed
+ contiguously <span class="hljs-keyword">in</span> memory. <span class="hljs-keyword">Each</span> node stores the
+ <span class="hljs-keyword">element</span> itself <span class="hljs-keyword">and</span> also a <span class="hljs-keyword">reference</span> (pointer
+ <span class="hljs-keyword">link</span>). Think about this <span class="hljs-keyword">as</span> christmas lights. <span class="hljs-keyword">In</span>
+ <span class="hljs-keyword">order</span> <span class="hljs-keyword">to</span> find a broken light, you have <span class="hljs-keyword">to</span> visit
+ <span class="hljs-keyword">each</span> light <span class="hljs-keyword">from</span> <span class="hljs-keyword">beginning</span> (<span class="hljs-keyword">head</span>) <span class="hljs-keyword">to</span> <span class="hljs-keyword">end</span> (tail).
+
+ <span class="hljs-comment">## Real world examples in Software Engineering?</span>
+
+ History <span class="hljs-keyword">and</span> Subversioning? A trial <span class="hljs-keyword">of</span> revisions
+ <span class="hljs-keyword">and</span> you can <span class="hljs-keyword">add</span> branches?</code></pre></dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -125,7 +159,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/LinkedList.ts#L35">ts/datastructures/LinkedList.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/LinkedList.ts#L64">ts/datastructures/LinkedList.ts:64</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="_ts_datastructures_linkedlist_.linkedlist.html" class="tsd-signature-type">LinkedList</a></h4>
@@ -141,7 +175,7 @@
 					<div class="tsd-signature tsd-kind-icon">head<span class="tsd-signature-symbol">:</span> <a href="_ts_datastructures_linkedlist_.node.html" class="tsd-signature-type">Node</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/LinkedList.ts#L34">ts/datastructures/LinkedList.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/LinkedList.ts#L63">ts/datastructures/LinkedList.ts:63</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -151,7 +185,7 @@
 					<div class="tsd-signature tsd-kind-icon">total<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/LinkedList.ts#L35">ts/datastructures/LinkedList.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/LinkedList.ts#L64">ts/datastructures/LinkedList.ts:64</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -168,10 +202,16 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/LinkedList.ts#L114">ts/datastructures/LinkedList.ts:114</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/LinkedList.ts#L143">ts/datastructures/LinkedList.ts:143</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the very first item in the LinkedList</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <a href="_ts_datastructures_linkedlist_.node.html" class="tsd-signature-type">Node</a></h4>
+							<p>head: Node</p>
 						</li>
 					</ul>
 				</section>
@@ -185,9 +225,16 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/LinkedList.ts#L159">ts/datastructures/LinkedList.ts:159</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/LinkedList.ts#L188">ts/datastructures/LinkedList.ts:188</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the item of a specific index in the
+										LinkedList. Returns undefined if it doesn&#39;t exist.
+									Take O(n) time. To find the item, you will need to visit all the nodes</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -195,6 +242,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_ts_datastructures_linkedlist_.node.html" class="tsd-signature-type">Node</a></h4>
+							<p>node: Node | undefined</p>
 						</li>
 					</ul>
 				</section>
@@ -208,9 +256,16 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/LinkedList.ts#L135">ts/datastructures/LinkedList.ts:135</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/LinkedList.ts#L164">ts/datastructures/LinkedList.ts:164</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the index of a specific node in the
+										LinkedList. Returns -1 if it doesn&#39;t exist.
+									Take O(n) time. To find the item, you will need to visit all the nodes</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -218,6 +273,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>index: number | -1</p>
 						</li>
 					</ul>
 				</section>
@@ -231,9 +287,16 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/LinkedList.ts#L82">ts/datastructures/LinkedList.ts:82</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/LinkedList.ts#L111">ts/datastructures/LinkedList.ts:111</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Insert a new item at a specified position in the
+										LinkedList.
+									Take O(n) time. To find the previous node, we will need to loop.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -244,6 +307,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Boolean</span></h4>
+							<p>isInserted Boolean</p>
 						</li>
 					</ul>
 				</section>
@@ -257,10 +321,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/LinkedList.ts#L247">ts/datastructures/LinkedList.ts:247</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/LinkedList.ts#L276">ts/datastructures/LinkedList.ts:276</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Check if the Stack is empty. Returns true if the stack has no items
+									Take O(1) time. We do not run any loop in any of these operations.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>Boolean</p>
 						</li>
 					</ul>
 				</section>
@@ -274,9 +345,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/LinkedList.ts#L50">ts/datastructures/LinkedList.ts:50</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/LinkedList.ts#L79">ts/datastructures/LinkedList.ts:79</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add new item to the end of the LinkedList
+									Take O(n) time. Loop to figure out the last node.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -284,6 +361,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Boolean</span></h4>
+							<p>isAdded Boolean</p>
 						</li>
 					</ul>
 				</section>
@@ -297,9 +375,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/LinkedList.ts#L182">ts/datastructures/LinkedList.ts:182</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/LinkedList.ts#L211">ts/datastructures/LinkedList.ts:211</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Removes an item from the LinkedList.
+									Take O(n) time. To find the item to be removed, you will need to visit all the nodes</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -307,6 +391,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Boolean</span></h4>
+							<p>isRemoved Boolean</p>
 						</li>
 					</ul>
 				</section>
@@ -320,9 +405,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/LinkedList.ts#L196">ts/datastructures/LinkedList.ts:196</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/LinkedList.ts#L225">ts/datastructures/LinkedList.ts:225</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Removes item from a specified index in the LinkedList.
+									Take O(n) time. To find the item to be removed, you will need to visit all the nodes.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -330,6 +421,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Boolean</span></h4>
+							<p>isRemoved Boolean</p>
 						</li>
 					</ul>
 				</section>
@@ -343,9 +435,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/LinkedList.ts#L123">ts/datastructures/LinkedList.ts:123</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/LinkedList.ts#L152">ts/datastructures/LinkedList.ts:152</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set the very first item in the LinkedList</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -366,10 +463,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/LinkedList.ts#L235">ts/datastructures/LinkedList.ts:235</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/LinkedList.ts#L264">ts/datastructures/LinkedList.ts:264</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return the total number of items from the stack
+									Take O(1) time. We do not run any loop in any of these operations.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>number</p>
 						</li>
 					</ul>
 				</section>
@@ -383,10 +487,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/LinkedList.ts#L257">ts/datastructures/LinkedList.ts:257</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/LinkedList.ts#L286">ts/datastructures/LinkedList.ts:286</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Helper function to return an array
+									of the LinkedList values.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h4>
+							<p>arr: Array</p>
 						</li>
 					</ul>
 				</section>

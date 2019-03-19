@@ -1,6 +1,6 @@
-/*
+/**
  * Set Data Structure
- * @class
+ * @class Set
  * @author Lee Boonstra
  *
  *      # What do we know about Sets?
@@ -23,7 +23,7 @@ export class Set {
         this.total = 0;
     }
 
-    /*
+    /**
      * Check if the value exist. If not, add it to the set.
      *
      * @param  {string} element - String name element will be used as key and value
@@ -38,10 +38,10 @@ export class Set {
         return isCreated;
     }
 
-    /*
+    /**
      * Remove value from the set
      *
-     * @param  {string} element - String name element will be used as key and value
+     * @param {string} element - String name element will be used as key and value
      */
     delete(element: string) {
         let isRemoved = false;
@@ -53,7 +53,7 @@ export class Set {
         return isRemoved;
     }
 
-    /*
+    /**
      * Check if the value exist.
      * Returns a boolean asserting whether an element is present with the given value in the Set object or not.
      *
@@ -75,7 +75,7 @@ export class Set {
         return isExisting;
     }
 
-    /*
+    /**
      * Returns an array with all the keys of the Set
      *
      * @return {array} keys - Array with all the keys of the set
@@ -89,7 +89,7 @@ export class Set {
         return arr;
     }
 
-    /*
+    /**
      * Returns an array with all the values of the Set
      *
      * @return {array} values - Array with all the values of the set
@@ -103,7 +103,7 @@ export class Set {
         return arr;
     }
 
-    /*
+    /**
     * Removes all elements from the Set object.
     */
     clear(): void {
@@ -111,7 +111,7 @@ export class Set {
         this.total = 0;
     }
 
-    /*
+    /**
     * Returns the number of values in the Set object.
     *
     * @return {number} total - Total amount of items in Set
@@ -120,7 +120,7 @@ export class Set {
         return this.total;
     }
 
-   /*
+   /**
     * Executes the callback function, for each item in the Set.
     *
     * @param {function} callback(key, val, set) - Callback function with 3 args key, value and set.
@@ -131,7 +131,7 @@ export class Set {
         }
     }
 
-    /*
+    /**
      * Given two sets, this returns a new set of elements from both of the given sets.
      *
      * @param {Set} otherSet - Another Set
@@ -150,7 +150,7 @@ export class Set {
         return unionSet;
     }
 
-    /*
+    /**
      * Given two sets, this returns a new set from elements that exist in both sets.
      *
      * @param {Set} otherSet - Another Set
@@ -167,7 +167,7 @@ export class Set {
         return intersection;
     }
 
-    /*
+    /**
      * Given two sets, this returns a new set with all the elements that
      * exist in your set but not in the other set.
      *
@@ -186,7 +186,7 @@ export class Set {
         return difference;
     }
 
-    /*
+    /**
      * Given two sets, confirm with a boolean if this is a subset of another set.
      *
      * @param {Set} otherSet - Another Set

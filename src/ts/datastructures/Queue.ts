@@ -1,5 +1,6 @@
-/*
+/**
  * Queue Data Structure
+ * @class Queue
  * @author Lee Boonstra
  *
  *      # What do we know about Queues?
@@ -26,7 +27,7 @@ export class Queue {
         this.count = 0;
     }
 
-    /*
+    /**
      * Add a new item to the back of the queue.
      * Take O(1) time. We do not run any loop in any of these operations.
      *
@@ -37,7 +38,7 @@ export class Queue {
         this.total++;
     }
 
-    /*
+    /**
      * Retrieves and removes the head of this queue.
      * Take O(1) time. We do not run any loop in any of these operations.
      *
@@ -59,7 +60,7 @@ export class Queue {
         return item;
     }
 
-    /*
+    /**
     * Return the the head of the queue
     * Take O(1) time. We do not run any loop in any of these operations.
     *
@@ -71,7 +72,7 @@ export class Queue {
         return this.items[this.count];
     }
 
-    /*
+    /**
     * Check if the Stack is empty. Returns true if the stack has no items
     * Take O(1) time. We do not run any loop in any of these operations.
     *
@@ -81,7 +82,7 @@ export class Queue {
         return (this.total === 0);
     }
 
-    /*
+    /**
     * Removes all the items from the Stack
     * Take O(1) time. We do not run any loop in any of these operations.
     */
@@ -93,7 +94,7 @@ export class Queue {
         }
     }
 
-    /*
+    /**
     * Return the total number of items from the stack
     * Take O(1) time. We do not run any loop in any of these operations.
     *
@@ -107,7 +108,7 @@ export class Queue {
         return this.total;
     }
 
-    /*
+    /**
      * Print stack
      * Take O(1) time. We do not run any loop in any of these operations.
      *

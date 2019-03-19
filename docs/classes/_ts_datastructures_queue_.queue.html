@@ -69,6 +69,28 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Queue Data Structure</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>class</dt>
+						<dd><p>Queue</p>
+						</dd>
+						<dt>author</dt>
+						<dd><p>Lee Boonstra</p>
+							<pre><code> <span class="hljs-comment"># What do we know about Queues?</span>
+ It's a sequential data structure <span class="hljs-keyword">with</span> FIFO. <span class="hljs-keyword">First</span> <span class="hljs-keyword">In</span> - <span class="hljs-keyword">First</span> <span class="hljs-keyword">Out</span> principle.
+ (<span class="hljs-keyword">and</span> LILO <span class="hljs-keyword">Last</span> <span class="hljs-keyword">in</span> - <span class="hljs-keyword">Last</span> <span class="hljs-keyword">Out</span>)
+ Compare this <span class="hljs-keyword">to</span> the line <span class="hljs-keyword">in</span> <span class="hljs-keyword">at</span> the bakery. <span class="hljs-keyword">First</span> person <span class="hljs-keyword">in</span> the line, takes
+ a ticket <span class="hljs-keyword">from</span> the counting machine, <span class="hljs-keyword">and</span> will be served <span class="hljs-keyword">first</span>, based <span class="hljs-keyword">on</span> the counter.
+
+ <span class="hljs-comment">## Real world examples in Software Engineering?</span>
+ Printer Queue.</code></pre></dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -122,7 +144,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Queue.ts#L17">ts/datastructures/Queue.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Queue.ts#L18">ts/datastructures/Queue.ts:18</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="_ts_datastructures_queue_.queue.html" class="tsd-signature-type">Queue</a></h4>
@@ -138,7 +160,7 @@
 					<div class="tsd-signature tsd-kind-icon">count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Queue.ts#L17">ts/datastructures/Queue.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Queue.ts#L18">ts/datastructures/Queue.ts:18</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -148,7 +170,7 @@
 					<div class="tsd-signature tsd-kind-icon">items<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Queue.ts#L15">ts/datastructures/Queue.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Queue.ts#L16">ts/datastructures/Queue.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -158,7 +180,7 @@
 					<div class="tsd-signature tsd-kind-icon">total<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Queue.ts#L16">ts/datastructures/Queue.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Queue.ts#L17">ts/datastructures/Queue.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -175,13 +197,22 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Queue.ts#L35">ts/datastructures/Queue.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Queue.ts#L36">ts/datastructures/Queue.ts:36</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add a new item to the back of the queue.
+									Take O(1) time. We do not run any loop in any of these operations.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>item: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>any</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -198,9 +229,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Queue.ts#L88">ts/datastructures/Queue.ts:88</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Queue.ts#L89">ts/datastructures/Queue.ts:89</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Removes all the items from the Stack
+									Take O(1) time. We do not run any loop in any of these operations.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -215,10 +252,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Queue.ts#L80">ts/datastructures/Queue.ts:80</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Queue.ts#L81">ts/datastructures/Queue.ts:81</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Check if the Stack is empty. Returns true if the stack has no items
+									Take O(1) time. We do not run any loop in any of these operations.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Boolean</span></h4>
+							<p>Boolean</p>
 						</li>
 					</ul>
 				</section>
@@ -232,10 +276,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Queue.ts#L68">ts/datastructures/Queue.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Queue.ts#L69">ts/datastructures/Queue.ts:69</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return the the head of the queue
+									Take O(1) time. We do not run any loop in any of these operations.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<p>removed item</p>
 						</li>
 					</ul>
 				</section>
@@ -249,10 +300,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Queue.ts#L46">ts/datastructures/Queue.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Queue.ts#L47">ts/datastructures/Queue.ts:47</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Retrieves and removes the head of this queue.
+									Take O(1) time. We do not run any loop in any of these operations.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<p>removed item</p>
 						</li>
 					</ul>
 				</section>
@@ -266,10 +324,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Queue.ts#L102">ts/datastructures/Queue.ts:102</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Queue.ts#L103">ts/datastructures/Queue.ts:103</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return the total number of items from the stack
+									Take O(1) time. We do not run any loop in any of these operations.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>number</p>
 						</li>
 					</ul>
 				</section>
@@ -283,10 +348,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Queue.ts#L116">ts/datastructures/Queue.ts:116</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Queue.ts#L117">ts/datastructures/Queue.ts:117</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Print stack
+									Take O(1) time. We do not run any loop in any of these operations.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h4>
+							<p>items</p>
 						</li>
 					</ul>
 				</section>

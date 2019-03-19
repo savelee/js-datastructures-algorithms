@@ -69,6 +69,29 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Set Data Structure</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>class</dt>
+						<dd><p>Set</p>
+						</dd>
+						<dt>author</dt>
+						<dd><p>Lee Boonstra</p>
+							<pre><code> <span class="hljs-meta"># What do we know about Sets?</span>
+ <span class="hljs-keyword">Set</span> objects are collections <span class="hljs-keyword">of</span> values.
+ You can iterate through the elements <span class="hljs-keyword">of</span> a <span class="hljs-keyword">set</span> <span class="hljs-keyword">in</span> insertion <span class="hljs-keyword">order</span>.
+ A value <span class="hljs-keyword">in</span> the <span class="hljs-keyword">Set</span> may only occur once; it <span class="hljs-keyword">is</span> unique <span class="hljs-keyword">in</span> the <span class="hljs-keyword">Set</span><span class="hljs-comment">'s collection.</span>
+ Because <span class="hljs-keyword">each</span> value <span class="hljs-keyword">in</span> the <span class="hljs-keyword">Set</span> has <span class="hljs-keyword">to</span> be unique, the value equality will be checked.
+
+ Since <span class="hljs-keyword">Set</span> only contains <span class="hljs-keyword">distinct</span> elements, it makes life much easier <span class="hljs-keyword">if</span> we know <span class="hljs-keyword">in</span> advance
+ we want <span class="hljs-keyword">to</span> avoid saving duplicate data <span class="hljs-keyword">to</span> our <span class="hljs-keyword">structure</span>.
+ <span class="hljs-keyword">In</span> Mathematics, it has concepts such <span class="hljs-keyword">as</span> union, difference <span class="hljs-keyword">and</span> intersection.</code></pre></dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -87,17 +110,27 @@
 								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_ts_datastructures_set_.set.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
+						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_ts_datastructures_set_.set.html#items" class="tsd-kind-icon">items</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_ts_datastructures_set_.set.html#total" class="tsd-kind-icon">total</a></li>
+							</ul>
+						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_set_.set.html#add" class="tsd-kind-icon">add</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_set_.set.html#clear" class="tsd-kind-icon">clear</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_set_.set.html#delete" class="tsd-kind-icon">delete</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_set_.set.html#entries" class="tsd-kind-icon">entries</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_set_.set.html#difference" class="tsd-kind-icon">difference</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_set_.set.html#foreach" class="tsd-kind-icon">for<wbr>Each</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_set_.set.html#has" class="tsd-kind-icon">has</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_set_.set.html#intersection" class="tsd-kind-icon">intersection</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_set_.set.html#issubset" class="tsd-kind-icon">is<wbr>Subset</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_set_.set.html#keys" class="tsd-kind-icon">keys</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_set_.set.html#size" class="tsd-kind-icon">size</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_set_.set.html#union" class="tsd-kind-icon">union</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_set_.set.html#values" class="tsd-kind-icon">values</a></li>
 							</ul>
 						</section>
@@ -116,12 +149,35 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Set.ts#L14">ts/datastructures/Set.ts:14</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Set.ts#L19">ts/datastructures/Set.ts:19</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="_ts_datastructures_set_.set.html" class="tsd-signature-type">Set</a></h4>
 						</li>
 					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="items" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> items</h3>
+					<div class="tsd-signature tsd-kind-icon">items<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Set.ts#L18">ts/datastructures/Set.ts:18</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="total" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> total</h3>
+					<div class="tsd-signature tsd-kind-icon">total<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Set.ts#L19">ts/datastructures/Set.ts:19</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -130,22 +186,27 @@
 					<a name="add" class="tsd-anchor"></a>
 					<h3>add</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">String</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Set.ts#L25">ts/datastructures/Set.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Set.ts#L31">ts/datastructures/Set.ts:31</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Check if the value exist. If not, add it to the set.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>val: <span class="tsd-signature-type">String</span></h5>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -159,9 +220,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Set.ts#L66">ts/datastructures/Set.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Set.ts#L109">ts/datastructures/Set.ts:109</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Removes all elements from the Set object.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -170,39 +236,63 @@
 					<a name="delete" class="tsd-anchor"></a>
 					<h3>delete</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">delete<span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">String</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">delete<span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Set.ts#L34">ts/datastructures/Set.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Set.ts#L46">ts/datastructures/Set.ts:46</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Remove value from the set</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>val: <span class="tsd-signature-type">String</span></h5>
+									<h5>element: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>String name element will be used as key and value</p>
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="entries" class="tsd-anchor"></a>
-					<h3>entries</h3>
+					<a name="difference" class="tsd-anchor"></a>
+					<h3>difference</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">entries<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">difference<span class="tsd-signature-symbol">(</span>otherSet<span class="tsd-signature-symbol">: </span><a href="_ts_datastructures_set_.set.html" class="tsd-signature-type">Set</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_ts_datastructures_set_.set.html" class="tsd-signature-type">Set</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Set.ts#L51">ts/datastructures/Set.ts:51</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Set.ts#L177">ts/datastructures/Set.ts:177</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Given two sets, this returns a new set with all the elements that
+									exist in your set but not in the other set.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>otherSet: <a href="_ts_datastructures_set_.set.html" class="tsd-signature-type">Set</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Another Set</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_ts_datastructures_set_.set.html" class="tsd-signature-type">Set</a></h4>
+							<p>difference - Return a difference set.</p>
 						</li>
 					</ul>
 				</section>
@@ -210,15 +300,26 @@
 					<a name="foreach" class="tsd-anchor"></a>
 					<h3>for<wbr>Each</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">for<wbr>Each<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">for<wbr>Each<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Set.ts#L81">ts/datastructures/Set.ts:81</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Set.ts#L128">ts/datastructures/Set.ts:128</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Executes the callback function, for each item in the Set.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>callback: <span class="tsd-signature-type">Function</span></h5>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -227,22 +328,96 @@
 					<a name="has" class="tsd-anchor"></a>
 					<h3>has</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">has<span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">String</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">has<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Set.ts#L45">ts/datastructures/Set.ts:45</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Set.ts#L63">ts/datastructures/Set.ts:63</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Check if the value exist.
+									Returns a boolean asserting whether an element is present with the given value in the Set object or not.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>val: <span class="tsd-signature-type">String</span></h5>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the value</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Boolean</span></h4>
+							<p>isExisting - Boolean, returns true if value exists in array.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="intersection" class="tsd-anchor"></a>
+					<h3>intersection</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">intersection<span class="tsd-signature-symbol">(</span>otherSet<span class="tsd-signature-symbol">: </span><a href="_ts_datastructures_set_.set.html" class="tsd-signature-type">Set</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_ts_datastructures_set_.set.html" class="tsd-signature-type">Set</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Set.ts#L159">ts/datastructures/Set.ts:159</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Given two sets, this returns a new set from elements that exist in both sets.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>otherSet: <a href="_ts_datastructures_set_.set.html" class="tsd-signature-type">Set</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Another Set</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_ts_datastructures_set_.set.html" class="tsd-signature-type">Set</a></h4>
+							<p>intersection - Return a intersection set.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="issubset" class="tsd-anchor"></a>
+					<h3>is<wbr>Subset</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Subset<span class="tsd-signature-symbol">(</span>otherSet<span class="tsd-signature-symbol">: </span><a href="_ts_datastructures_set_.set.html" class="tsd-signature-type">Set</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Set.ts#L195">ts/datastructures/Set.ts:195</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Given two sets, confirm with a boolean if this is a subset of another set.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>otherSet: <a href="_ts_datastructures_set_.set.html" class="tsd-signature-type">Set</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Another Set</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>isSubset - Return boolean true if this is a subset.</p>
 						</li>
 					</ul>
 				</section>
@@ -250,16 +425,22 @@
 					<a name="keys" class="tsd-anchor"></a>
 					<h3>keys</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">keys<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">keys<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Set.ts#L55">ts/datastructures/Set.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Set.ts#L83">ts/datastructures/Set.ts:83</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns an array with all the keys of the Set</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+							<p>keys - Array with all the keys of the set</p>
 						</li>
 					</ul>
 				</section>
@@ -273,10 +454,48 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Set.ts#L75">ts/datastructures/Set.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Set.ts#L119">ts/datastructures/Set.ts:119</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the number of values in the Set object.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>total - Total amount of items in Set</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="union" class="tsd-anchor"></a>
+					<h3>union</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">union<span class="tsd-signature-symbol">(</span>otherSet<span class="tsd-signature-symbol">: </span><a href="_ts_datastructures_set_.set.html" class="tsd-signature-type">Set</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_ts_datastructures_set_.set.html" class="tsd-signature-type">Set</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Set.ts#L140">ts/datastructures/Set.ts:140</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Given two sets, this returns a new set of elements from both of the given sets.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>otherSet: <a href="_ts_datastructures_set_.set.html" class="tsd-signature-type">Set</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Another Set</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_ts_datastructures_set_.set.html" class="tsd-signature-type">Set</a></h4>
+							<p>unionSet - Return a combined set.</p>
 						</li>
 					</ul>
 				</section>
@@ -284,16 +503,22 @@
 					<a name="values" class="tsd-anchor"></a>
 					<h3>values</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">values<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">values<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/d86affd/src/ts/datastructures/Set.ts#L59">ts/datastructures/Set.ts:59</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/f2118c0/src/ts/datastructures/Set.ts#L97">ts/datastructures/Set.ts:97</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns an array with all the values of the Set</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h4>
+							<p>values - Array with all the values of the set</p>
 						</li>
 					</ul>
 				</section>
@@ -344,6 +569,12 @@
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="_ts_datastructures_set_.set.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_ts_datastructures_set_.set.html#items" class="tsd-kind-icon">items</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_ts_datastructures_set_.set.html#total" class="tsd-kind-icon">total</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_ts_datastructures_set_.set.html#add" class="tsd-kind-icon">add</a>
 							</li>
@@ -354,7 +585,7 @@
 								<a href="_ts_datastructures_set_.set.html#delete" class="tsd-kind-icon">delete</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_ts_datastructures_set_.set.html#entries" class="tsd-kind-icon">entries</a>
+								<a href="_ts_datastructures_set_.set.html#difference" class="tsd-kind-icon">difference</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_ts_datastructures_set_.set.html#foreach" class="tsd-kind-icon">for<wbr>Each</a>
@@ -363,10 +594,19 @@
 								<a href="_ts_datastructures_set_.set.html#has" class="tsd-kind-icon">has</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_ts_datastructures_set_.set.html#intersection" class="tsd-kind-icon">intersection</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_ts_datastructures_set_.set.html#issubset" class="tsd-kind-icon">is<wbr>Subset</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_ts_datastructures_set_.set.html#keys" class="tsd-kind-icon">keys</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_ts_datastructures_set_.set.html#size" class="tsd-kind-icon">size</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_ts_datastructures_set_.set.html#union" class="tsd-kind-icon">union</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_ts_datastructures_set_.set.html#values" class="tsd-kind-icon">values</a>

@@ -1,6 +1,6 @@
-/*
+/**
  * Stack Data Structure
- * @module Stack
+ * @class Stack
  * @author Lee Boonstra
  *
  *      # What do we know about Stacks?
@@ -25,7 +25,7 @@ export class Stack {
         this.total = 0;
     }
 
-    /*
+    /**
      * Add a new item to the top of the stack.
      * Take O(1) time. We do not run any loop in any of these operations.
      *
@@ -38,7 +38,7 @@ export class Stack {
         this.total++;
     }
 
-    /*
+    /**
      * Pops / Removes the top item from the stack.
      * Take O(1) time. We do not run any loop in any of these operations.
      *
@@ -56,7 +56,7 @@ export class Stack {
         return item;
     }
 
-    /*
+    /**
     * Return the top item from the stack.
     * Take O(1) time. We do not run any loop in any of these operations.
     *
@@ -69,7 +69,7 @@ export class Stack {
         return this.items[i];
     }
 
-    /*
+    /**
     * Check if the Stack is empty. Returns true if the stack has no items
     * Take O(1) time. We do not run any loop in any of these operations.
     *
@@ -79,7 +79,7 @@ export class Stack {
         return (this.total === 0);
     }
 
-    /*
+    /**
     * Removes all the items from the Stack
     * Take O(1) time. We do not run any loop in any of these operations.
     */
@@ -90,7 +90,7 @@ export class Stack {
         }
     }
 
-    /*
+    /**
     * Return the total number of items from the stack
     * Take O(1) time. We do not run any loop in any of these operations.
     *
@@ -103,7 +103,7 @@ export class Stack {
         return this.total;
     }
 
-    /*
+    /**
      * Print stack
      * Take O(1) time. We do not run any loop in any of these operations.
      *
