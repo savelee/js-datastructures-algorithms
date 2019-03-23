@@ -1,10 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/*
+/**
  * LinkedList Data Structure
+ * @class Node
  * @author Lee Boonstra
  *
  *      # What do we know about LinkedLists?
+ *
  *      It's a sequential data structure and has
  *      similarities with an Array (also called a List).
  *      In other languages, an Array has a predefined
@@ -20,6 +22,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  *      each light from beginning (head) to end (tail).
  *
  *      ## Real world examples in Software Engineering?
+ *
  *      History and Subversioning? A trial of revisions
  *      and you can add branches?
  */
@@ -30,13 +33,39 @@ class Node {
     }
 }
 exports.Node = Node;
+/**
+ * LinkedList Data Structure
+ * @class LinkedList
+ * @author Lee Boonstra
+ *
+ *      # What do we know about LinkedLists?
+ *
+ *      It's a sequential data structure and has
+ *      similarities with an Array (also called a List).
+ *      In other languages, an Array has a predefined
+ *      size. Inserting and Removing items can be
+ *      expensive. Because elements needs to be shifted
+ *      over. A LinkedList is a dynamic data structure. We
+ *      can add and remove items from it and it will grow
+ *      when required. Elements are not placed
+ *      contiguously in memory. Each node stores the
+ *      element itself and also a reference (pointer
+ *      link). Think about this as christmas lights. In
+ *      order to find a broken light, you have to visit
+ *      each light from beginning (head) to end (tail).
+ *
+ *      ## Real world examples in Software Engineering?
+ *
+ *      History and Subversioning? A trial of revisions
+ *      and you can add branches?
+ */
 class LinkedList {
     constructor() {
         // when you create a LinkedList the head is empty
         this.head = null;
         this.total = 0;
     }
-    /*
+    /**
     * Add new item to the end of the LinkedList
     * Take O(n) time. Loop to figure out the last node.
     *
@@ -63,7 +92,7 @@ class LinkedList {
         this.total++;
         return true;
     }
-    /*
+    /**
     * Insert a new item at a specified position in the
     * LinkedList.
     * Take O(n) time. To find the previous node, we will need to loop.
@@ -97,7 +126,7 @@ class LinkedList {
         }
         return isInserted;
     }
-    /*
+    /**
      * Get the very first item in the LinkedList
      *
      * @return head: Node
@@ -105,15 +134,15 @@ class LinkedList {
     getHead() {
         return this.head;
     }
-    /*
-     * Set the very first item in the LinkedList
-     *
-     * @param node: Node
-     */
+    /**
+      * Set the very first item in the LinkedList
+      *
+      * @param node: Node
+      */
     setHead(node) {
         this.head = node;
     }
-    /*
+    /**
      * Get the index of a specific node in the
      * LinkedList. Returns -1 if it doesn't exist.
      * Take O(n) time. To find the item, you will need to visit all the nodes
@@ -135,7 +164,7 @@ class LinkedList {
         }
         return index;
     }
-    /*
+    /**
     * Get the item of a specific index in the
     * LinkedList. Returns undefined if it doesn't exist.
     * Take O(n) time. To find the item, you will need to visit all the nodes
@@ -154,7 +183,7 @@ class LinkedList {
         }
         return node;
     }
-    /*
+    /**
      * Removes an item from the LinkedList.
      * Take O(n) time. To find the item to be removed, you will need to visit all the nodes
      *
@@ -166,7 +195,7 @@ class LinkedList {
         let result = this.removeAt(index);
         return result;
     }
-    /*
+    /**
      * Removes item from a specified index in the LinkedList.
      * Take O(n) time. To find the item to be removed, you will need to visit all the nodes.
      *
@@ -205,7 +234,7 @@ class LinkedList {
         }
         return isRemoved;
     }
-    /*
+    /**
     * Return the total number of items from the stack
     * Take O(1) time. We do not run any loop in any of these operations.
     *
@@ -217,7 +246,7 @@ class LinkedList {
         // the array is not shifting.
         return this.total;
     }
-    /*
+    /**
     * Check if the Stack is empty. Returns true if the stack has no items
     * Take O(1) time. We do not run any loop in any of these operations.
     * @returns Boolean
@@ -225,7 +254,7 @@ class LinkedList {
     isEmpty() {
         return (this.total === 0);
     }
-    /*
+    /**
     * Helper function to return an array
     * of the LinkedList values.
     *

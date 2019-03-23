@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/*
+/**
  * Stack Data Structure
- * @module Stack
+ * @class Stack
  * @author Lee Boonstra
  *
  *      # What do we know about Stacks?
@@ -23,7 +23,7 @@ class Stack {
         // Set the total to 0;
         this.total = 0;
     }
-    /*
+    /**
      * Add a new item to the top of the stack.
      * Take O(1) time. We do not run any loop in any of these operations.
      *
@@ -35,7 +35,7 @@ class Stack {
         this.items[this.total] = item;
         this.total++;
     }
-    /*
+    /**
      * Pops / Removes the top item from the stack.
      * Take O(1) time. We do not run any loop in any of these operations.
      *
@@ -52,7 +52,7 @@ class Stack {
         }
         return item;
     }
-    /*
+    /**
     * Return the top item from the stack.
     * Take O(1) time. We do not run any loop in any of these operations.
     *
@@ -64,7 +64,7 @@ class Stack {
         let i = this.total - 1;
         return this.items[i];
     }
-    /*
+    /**
     * Check if the Stack is empty. Returns true if the stack has no items
     * Take O(1) time. We do not run any loop in any of these operations.
     *
@@ -73,7 +73,7 @@ class Stack {
     isEmpty() {
         return (this.total === 0);
     }
-    /*
+    /**
     * Removes all the items from the Stack
     * Take O(1) time. We do not run any loop in any of these operations.
     */
@@ -83,7 +83,7 @@ class Stack {
             this.total = 0;
         }
     }
-    /*
+    /**
     * Return the total number of items from the stack
     * Take O(1) time. We do not run any loop in any of these operations.
     *
@@ -95,7 +95,7 @@ class Stack {
         // the array is not shifting.
         return this.total;
     }
-    /*
+    /**
      * Print stack
      * Take O(1) time. We do not run any loop in any of these operations.
      *

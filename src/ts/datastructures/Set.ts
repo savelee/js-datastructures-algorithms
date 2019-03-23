@@ -26,7 +26,7 @@ export class Set {
     /**
      * Check if the value exist. If not, add it to the set.
      *
-     * @param  {string} element - String name element will be used as key and value
+     * @param  {string} element - String name value will be used as key and value
      */
     add(value: string) {
         let isCreated = false;
@@ -41,12 +41,12 @@ export class Set {
     /**
      * Remove value from the set
      *
-     * @param {string} element - String name element will be used as key and value
+     * @param {string} value - String name value will be used as key and value
      */
-    delete(element: string) {
+    delete(value: string) {
         let isRemoved = false;
-        if (this.has(element)) {
-            delete this.items[element];
+        if (this.has(value)) {
+            delete this.items[value];
             isRemoved = true;
             this.total--;
         }
@@ -58,7 +58,7 @@ export class Set {
      * Returns a boolean asserting whether an element is present with the given value in the Set object or not.
      *
      * @param {string} value - the value
-     * @return {boolean} isExisting - Boolean, returns true if value exists in array.
+     * @return {boolean} isExisting - Boolean, returns true if value exists in Set.
      */
     has(value: string): Boolean {
         let isExisting = false;
@@ -132,6 +132,16 @@ export class Set {
     }
 
     /**
+    * Check if the Stack is empty. Returns true if the stack has no items
+    * Take O(1) time. We do not run any loop in any of these operations.
+    *
+    * @returns {boolean} isEmpty - if the Stack is empty or not
+    */
+    isEmpty(): Boolean {
+        return (this.total === 0);
+    }
+
+    /**
      * Given two sets, this returns a new set of elements from both of the given sets.
      *
      * @param {Set} otherSet - Another Set
@@ -197,7 +207,7 @@ export class Set {
         let counter = 0;
 
         // if this set is bigger than the other set, it can't be a subset
-        if(this.size() <= otherSet.size()) {
+        if (this.size() <= otherSet.size()) {
             // loop through all items, and check if my values
             // also exist in the other set.
             // all values will need to exist.

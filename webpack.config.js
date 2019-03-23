@@ -40,6 +40,18 @@ const plugins = [
     chunks: ['app'],
     filename: 'examples/sets.html'
   }),
+  new HtmlWebpackPlugin({
+    template: 'examples/maps.html',
+    inject: true,
+    chunks: ['app'],
+    filename: 'examples/maps.html'
+  }),
+  new HtmlWebpackPlugin({
+    template: 'examples/hashmaps.html',
+    inject: true,
+    chunks: ['app'],
+    filename: 'examples/hashmaps.html'
+  }),
   new webpack.LoaderOptionsPlugin({
     options: {
       tslint: {

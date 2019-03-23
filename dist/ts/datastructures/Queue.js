@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/*
+/**
  * Queue Data Structure
+ * @class Queue
  * @author Lee Boonstra
  *
  *      # What do we know about Queues?
@@ -23,7 +24,7 @@ class Queue {
         // Compared to Stacks, this is what makes this class different!
         this.count = 0;
     }
-    /*
+    /**
      * Add a new item to the back of the queue.
      * Take O(1) time. We do not run any loop in any of these operations.
      *
@@ -33,7 +34,7 @@ class Queue {
         this.items[this.total] = item;
         this.total++;
     }
-    /*
+    /**
      * Retrieves and removes the head of this queue.
      * Take O(1) time. We do not run any loop in any of these operations.
      *
@@ -54,7 +55,7 @@ class Queue {
         }
         return item;
     }
-    /*
+    /**
     * Return the the head of the queue
     * Take O(1) time. We do not run any loop in any of these operations.
     *
@@ -65,7 +66,7 @@ class Queue {
             return undefined;
         return this.items[this.count];
     }
-    /*
+    /**
     * Check if the Stack is empty. Returns true if the stack has no items
     * Take O(1) time. We do not run any loop in any of these operations.
     *
@@ -74,7 +75,7 @@ class Queue {
     isEmpty() {
         return (this.total === 0);
     }
-    /*
+    /**
     * Removes all the items from the Stack
     * Take O(1) time. We do not run any loop in any of these operations.
     */
@@ -85,7 +86,7 @@ class Queue {
             this.count = 0; // reset counter
         }
     }
-    /*
+    /**
     * Return the total number of items from the stack
     * Take O(1) time. We do not run any loop in any of these operations.
     *
@@ -97,7 +98,7 @@ class Queue {
         // the array is not shifting.
         return this.total;
     }
-    /*
+    /**
      * Print stack
      * Take O(1) time. We do not run any loop in any of these operations.
      *
