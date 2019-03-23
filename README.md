@@ -7,8 +7,8 @@ These Data Structures are exposed on global object: `Library`.
 * [Queue](https://github.com/savelee/js-datastructures-algorithms/blob/master/src/ts/datastructures/Queue.ts)
 * [LinkedList](https://github.com/savelee/js-datastructures-algorithms/blob/master/src/ts/datastructures/LinkedList.ts)
 * [Set](https://github.com/savelee/js-datastructures-algorithms/blob/master/src/ts/datastructures/Set.ts)
-* Map
-* HashMap
+* [Map](https://github.com/savelee/js-datastructures-algorithms/blob/master/src/ts/datastructures/Map.ts)
+* [HashMap](https://github.com/savelee/js-datastructures-algorithms/blob/master/src/ts/datastructures/HashMap.ts)
 * Tree
 * Graph
 
