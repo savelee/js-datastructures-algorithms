@@ -16,16 +16,15 @@
 <script>
 
 let ht = new Library.HashTable({
-  probe: false,
+  probe: true,
   bucketSize: 5
 });
-ht.put('lee', '+3165153344');
 ht.put('michele', '+316515335');
-ht.put('lee', '+316515335');
+ht.put('lee', '+316515335'); // skipped key needs to be unique
 ht.put('ele', '+3165153344');
 ht.put('david', '+3465153346');
 ht.put('jake', '+3465153347');
-//ht.remove('ele');
+ht.remove('ele');
 
 console.log(ht);
 

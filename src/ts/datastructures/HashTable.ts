@@ -134,7 +134,7 @@ export class SimpleDict {
 export class HashTable {
     private table: any[];
     private total: number;
-    private bucketSize: number;
+    public bucketSize: number;
     private probe: boolean;
     private uniqueKeys: boolean;
 
