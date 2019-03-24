@@ -4,7 +4,7 @@
  * @author Lee Boonstra
  *
  *      # What do we know about LinkedLists?
- * 
+ *
  *      It's a sequential data structure and has
  *      similarities with an Array (also called a List).
  *      In other languages, an Array has a predefined
@@ -39,7 +39,7 @@ export class Node {
  * @author Lee Boonstra
  *
  *      # What do we know about LinkedLists?
- * 
+ *
  *      It's a sequential data structure and has
  *      similarities with an Array (also called a List).
  *      In other languages, an Array has a predefined

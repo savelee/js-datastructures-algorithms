@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Map | datastructures-algorithms</title>
+	<title>HashTable | datastructures-algorithms</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_ts_datastructures_map_.html">&quot;ts/datastructures/Map&quot;</a>
+					<a href="../modules/_ts_datastructures_hashtable_.html">&quot;ts/datastructures/HashTable&quot;</a>
 				</li>
 				<li>
-					<a href="_ts_datastructures_map_.map.html">Map</a>
+					<a href="_ts_datastructures_hashtable_.hashtable.html">HashTable</a>
 				</li>
 			</ul>
-			<h1>Class Map</h1>
+			<h1>Class HashTable</h1>
 		</div>
 	</div>
 </header>
@@ -72,21 +72,40 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Map Data Structure</p>
+						<p>HashTable Data Structure</p>
 					</div>
 					<dl class="tsd-comment-tags">
 						<dt>class</dt>
-						<dd><p>Map</p>
+						<dd><p>HashTable</p>
 						</dd>
 						<dt>author</dt>
 						<dd><p>Lee Boonstra</p>
-							<pre><code> # What <span class="hljs-keyword">do</span> we know about Map?
- <span class="hljs-builtin-name">Set</span> objects are collections of key value pairs
- The key can be used <span class="hljs-keyword">to</span> <span class="hljs-builtin-name">find</span> a particular element.
- Other names are Dictionary, Symbol table <span class="hljs-keyword">or</span> Associative Arrays
+							<pre><code> # What <span class="hljs-keyword">do</span> we know about HashMap?
+ Very <span class="hljs-keyword">similar</span> <span class="hljs-keyword">to</span> Maps/Associative Arrays, <span class="hljs-keyword">for</span> storing
+ key <span class="hljs-keyword">value</span> pairs. You can find a stored <span class="hljs-keyword">value</span> <span class="hljs-keyword">in</span> the shortest
+ <span class="hljs-type">time</span> possible, O(<span class="hljs-number">1</span>), rather than looping though <span class="hljs-keyword">each</span>
+ <span class="hljs-keyword">array</span> <span class="hljs-keyword">value</span> O(n) <span class="hljs-keyword">or</span> <span class="hljs-keyword">using</span> a sorted binary <span class="hljs-keyword">array</span>
+ <span class="hljs-keyword">or</span> Tree O(<span class="hljs-keyword">log</span> n).
 
- <span class="hljs-keyword">In</span> computer science, maps are often used <span class="hljs-keyword">to</span> store the refefence<span class="hljs-built_in"> address </span>of an object.
- <span class="hljs-keyword">For</span> example, look <span class="hljs-keyword">in</span> your Developer Tools, Memory tab <span class="hljs-keyword">and</span> look at the Snapshots</code></pre></dd>
+ Think about a student <span class="hljs-keyword">is</span> assigned a student number
+ that can be used <span class="hljs-keyword">to</span> find information about him.
+
+ <span class="hljs-keyword">To</span> make sure <span class="hljs-keyword">all</span> key <span class="hljs-keyword">values</span> <span class="hljs-keyword">in</span> a HashTable are short
+ <span class="hljs-keyword">as</span> possible, <span class="hljs-keyword">and</span> are integers <span class="hljs-keyword">to</span> <span class="hljs-keyword">do</span> fast lookup,
+ we will need a hashing <span class="hljs-keyword">function</span>.
+ You will need <span class="hljs-keyword">to</span> find a good hashing <span class="hljs-keyword">function</span>, one
+ that doesn<span class="hljs-string">'t take too long to create a hash (when inserting/
+ getting or removing). But you also don'</span>t want <span class="hljs-keyword">to</span> make it
+ <span class="hljs-keyword">to</span> simple so you <span class="hljs-keyword">create</span> collisions.
+
+ Although hash <span class="hljs-keyword">tables</span> provide fast insertion, deletion, <span class="hljs-keyword">and</span> retrieval,
+ they <span class="hljs-keyword">perform</span> poorly <span class="hljs-keyword">for</span> operations that involve searching, such <span class="hljs-keyword">as</span> finding the
+ minimum <span class="hljs-keyword">and</span> maximum <span class="hljs-keyword">values</span> <span class="hljs-keyword">in</span> a data <span class="hljs-keyword">set</span>. <span class="hljs-keyword">For</span> these operations, other data structures
+ such <span class="hljs-keyword">as</span> the binary <span class="hljs-keyword">search</span> tree are more appropriate. <span class="hljs-keyword">Access</span> <span class="hljs-keyword">and</span> Deletion <span class="hljs-keyword">in</span> worst <span class="hljs-keyword">case</span> O(n)
+
+ ## <span class="hljs-type">Real</span> world examples <span class="hljs-keyword">in</span> Software Engineering?
+ Browser vendors use hashtables a lot.
+ But <span class="hljs-keyword">also</span> <span class="hljs-keyword">when</span> you use a <span class="hljs-keyword">database</span>, you would <span class="hljs-keyword">set</span> indexes <span class="hljs-keyword">to</span> allow faster searching</code></pre></dd>
 					</dl>
 				</div>
 			</section>
@@ -94,7 +113,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Map</span>
+						<span class="target">HashTable</span>
 					</li>
 				</ul>
 			</section>
@@ -105,29 +124,31 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_ts_datastructures_map_.map.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_ts_datastructures_hashtable_.hashtable.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_ts_datastructures_map_.map.html#items" class="tsd-kind-icon">items</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_ts_datastructures_map_.map.html#total" class="tsd-kind-icon">total</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_ts_datastructures_hashtable_.hashtable.html#bucketsize" class="tsd-kind-icon">bucket<wbr>Size</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_ts_datastructures_hashtable_.hashtable.html#probe" class="tsd-kind-icon">probe</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_ts_datastructures_hashtable_.hashtable.html#table" class="tsd-kind-icon">table</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_ts_datastructures_hashtable_.hashtable.html#total" class="tsd-kind-icon">total</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_ts_datastructures_hashtable_.hashtable.html#uniquekeys" class="tsd-kind-icon">unique<wbr>Keys</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_map_.map.html#clear" class="tsd-kind-icon">clear</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_map_.map.html#foreach" class="tsd-kind-icon">for<wbr>Each</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_map_.map.html#get" class="tsd-kind-icon">get</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_map_.map.html#haskey" class="tsd-kind-icon">has<wbr>Key</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_map_.map.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_map_.map.html#keys" class="tsd-kind-icon">keys</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_map_.map.html#remove" class="tsd-kind-icon">remove</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_map_.map.html#set" class="tsd-kind-icon">set</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_map_.map.html#size" class="tsd-kind-icon">size</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_map_.map.html#values" class="tsd-kind-icon">values</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_hashtable_.hashtable.html#clear" class="tsd-kind-icon">clear</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_hashtable_.hashtable.html#foreach" class="tsd-kind-icon">for<wbr>Each</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_hashtable_.hashtable.html#get" class="tsd-kind-icon">get</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_hashtable_.hashtable.html#hashash" class="tsd-kind-icon">has<wbr>Hash</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_hashtable_.hashtable.html#hashcode" class="tsd-kind-icon">hash<wbr>Code</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_hashtable_.hashtable.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_hashtable_.hashtable.html#put" class="tsd-kind-icon">put</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_hashtable_.hashtable.html#remove" class="tsd-kind-icon">remove</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_hashtable_.hashtable.html#size" class="tsd-kind-icon">size</a></li>
 							</ul>
 						</section>
 					</div>
@@ -139,16 +160,29 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Map<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_ts_datastructures_map_.map.html" class="tsd-signature-type">Map</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Hash<wbr>Table<span class="tsd-signature-symbol">(</span>opt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_ts_datastructures_hashtable_.hashtable.html" class="tsd-signature-type">HashTable</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/19bbe27/src/ts/datastructures/Map.ts#L17">ts/datastructures/Map.ts:17</a></li>
+									<li>Defined in ts/datastructures/HashTable.ts:139</li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="_ts_datastructures_map_.map.html" class="tsd-signature-type">Map</a></h4>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>opt: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>(optional)</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_ts_datastructures_hashtable_.hashtable.html" class="tsd-signature-type">HashTable</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -156,12 +190,32 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="items" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> items</h3>
-					<div class="tsd-signature tsd-kind-icon">items<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Object</span></div>
+					<a name="bucketsize" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> bucket<wbr>Size</h3>
+					<div class="tsd-signature tsd-kind-icon">bucket<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/19bbe27/src/ts/datastructures/Map.ts#L16">ts/datastructures/Map.ts:16</a></li>
+							<li>Defined in ts/datastructures/HashTable.ts:137</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="probe" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> probe</h3>
+					<div class="tsd-signature tsd-kind-icon">probe<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in ts/datastructures/HashTable.ts:138</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="table" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> table</h3>
+					<div class="tsd-signature tsd-kind-icon">table<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in ts/datastructures/HashTable.ts:135</li>
 						</ul>
 					</aside>
 				</section>
@@ -171,7 +225,17 @@
 					<div class="tsd-signature tsd-kind-icon">total<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/19bbe27/src/ts/datastructures/Map.ts#L17">ts/datastructures/Map.ts:17</a></li>
+							<li>Defined in ts/datastructures/HashTable.ts:136</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="uniquekeys" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> unique<wbr>Keys</h3>
+					<div class="tsd-signature tsd-kind-icon">unique<wbr>Keys<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in ts/datastructures/HashTable.ts:139</li>
 						</ul>
 					</aside>
 				</section>
@@ -188,7 +252,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/19bbe27/src/ts/datastructures/Map.ts#L111">ts/datastructures/Map.ts:111</a></li>
+									<li>Defined in ts/datastructures/HashTable.ts:293</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -210,7 +274,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/19bbe27/src/ts/datastructures/Map.ts#L141">ts/datastructures/Map.ts:141</a></li>
+									<li>Defined in ts/datastructures/HashTable.ts:322</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -232,18 +296,19 @@
 					<a name="get" class="tsd-anchor"></a>
 					<h3>get</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">String</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/19bbe27/src/ts/datastructures/Map.ts#L76">ts/datastructures/Map.ts:76</a></li>
+									<li>Defined in ts/datastructures/HashTable.ts:259</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Get the value from a specific key</p>
+									<p>Get the KeyValue Object pair from a specific key
+									When not probing best case O(1) worst case O(n)</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -255,41 +320,77 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">String</span></h4>
-							<p>value - the value from the key</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<p>return KeyValue Object or incase of LinkedList collision, an array with multiples.</p>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="haskey" class="tsd-anchor"></a>
-					<h3>has<wbr>Key</h3>
+					<a name="hashash" class="tsd-anchor"></a>
+					<h3>has<wbr>Hash</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">has<wbr>Key<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">has<wbr>Hash<span class="tsd-signature-symbol">(</span>hash<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/19bbe27/src/ts/datastructures/Map.ts#L62">ts/datastructures/Map.ts:62</a></li>
+									<li>Defined in ts/datastructures/HashTable.ts:244</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Check if the key exist.
+									<p>Check if the hash exist.
 									Returns a boolean asserting whether a key is present in the Map.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
+									<h5>hash: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the hash</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>isExisting - Boolean, returns true if value exists in Map.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="hashcode" class="tsd-anchor"></a>
+					<h3>hash<wbr>Code</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">hash<wbr>Code<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in ts/datastructures/HashTable.ts:338</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create a hash based on a key string
+										The Hash-function takes a key and converts it to a number which will be the index at which to store it.
+										I am computing a hash value by summing the ASCII value of each character of the string
+										, multiplying the ASCII value by a multiplier &#39;code&#39;, which in this case, is an odd prime 37.
+										And the reason to choose 37 being, by some empirical research, if we take over 50,000 English words
+									will produce less than 7 collisions in each case, while creating a hasing function.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
 									<h5>key: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the key</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Boolean</span></h4>
-							<p>isExisting - Boolean, returns true if value exists in Map.</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -303,7 +404,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/19bbe27/src/ts/datastructures/Map.ts#L131">ts/datastructures/Map.ts:131</a></li>
+									<li>Defined in ts/datastructures/HashTable.ts:313</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -318,70 +419,16 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="keys" class="tsd-anchor"></a>
-					<h3>keys</h3>
+					<a name="put" class="tsd-anchor"></a>
+					<h3>put</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">keys<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">put<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/19bbe27/src/ts/datastructures/Map.ts#L85">ts/datastructures/Map.ts:85</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Returns an array with all the keys of the Set</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
-							<p>keys - Array with all the keys of the set</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="remove" class="tsd-anchor"></a>
-					<h3>remove</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">remove<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/19bbe27/src/ts/datastructures/Map.ts#L45">ts/datastructures/Map.ts:45</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Remove value from the set</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>key: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>String name key will be used as key and value</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="set" class="tsd-anchor"></a>
-					<h3>set</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/19bbe27/src/ts/datastructures/Map.ts#L30">ts/datastructures/Map.ts:30</a></li>
+									<li>Defined in ts/datastructures/HashTable.ts:161</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -409,6 +456,38 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="remove" class="tsd-anchor"></a>
+					<h3>remove</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">remove<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in ts/datastructures/HashTable.ts:213</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Remove key value pair from the HashMap. When Collision with LinkedList is enabled, it will remove all occurences.
+									When not probing best case O(1) worst case O(n).</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>key: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>String name key will be used as key and value</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="size" class="tsd-anchor"></a>
 					<h3>size</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -418,7 +497,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/19bbe27/src/ts/datastructures/Map.ts#L121">ts/datastructures/Map.ts:121</a></li>
+									<li>Defined in ts/datastructures/HashTable.ts:303</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -428,29 +507,6 @@
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 							<p>total - Total amount of items in Set</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="values" class="tsd-anchor"></a>
-					<h3>values</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">values<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/19bbe27/src/ts/datastructures/Map.ts#L99">ts/datastructures/Map.ts:99</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Returns an array with all the values of the Set</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h4>
-							<p>values - Array with all the values of the set</p>
 						</li>
 					</ul>
 				</section>
@@ -468,13 +524,13 @@
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_ts_datastructures_graph_.html">"ts/datastructures/<wbr>Graph"</a>
 					</li>
-					<li class=" tsd-kind-external-module">
+					<li class="current tsd-kind-external-module">
 						<a href="../modules/_ts_datastructures_hashtable_.html">"ts/datastructures/<wbr>Hash<wbr>Table"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_ts_datastructures_linkedlist_.html">"ts/datastructures/<wbr>Linked<wbr>List"</a>
 					</li>
-					<li class="current tsd-kind-external-module">
+					<li class=" tsd-kind-external-module">
 						<a href="../modules/_ts_datastructures_map_.html">"ts/datastructures/<wbr>Map"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -496,51 +552,60 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_ts_datastructures_map_.map.html" class="tsd-kind-icon">Map</a>
+						<a href="_ts_datastructures_hashtable_.hashtable.html" class="tsd-kind-icon">Hash<wbr>Table</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="_ts_datastructures_map_.map.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="_ts_datastructures_hashtable_.hashtable.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="_ts_datastructures_map_.map.html#items" class="tsd-kind-icon">items</a>
+								<a href="_ts_datastructures_hashtable_.hashtable.html#bucketsize" class="tsd-kind-icon">bucket<wbr>Size</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="_ts_datastructures_map_.map.html#total" class="tsd-kind-icon">total</a>
+								<a href="_ts_datastructures_hashtable_.hashtable.html#probe" class="tsd-kind-icon">probe</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_ts_datastructures_hashtable_.hashtable.html#table" class="tsd-kind-icon">table</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_ts_datastructures_hashtable_.hashtable.html#total" class="tsd-kind-icon">total</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_ts_datastructures_hashtable_.hashtable.html#uniquekeys" class="tsd-kind-icon">unique<wbr>Keys</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_ts_datastructures_map_.map.html#clear" class="tsd-kind-icon">clear</a>
+								<a href="_ts_datastructures_hashtable_.hashtable.html#clear" class="tsd-kind-icon">clear</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_ts_datastructures_map_.map.html#foreach" class="tsd-kind-icon">for<wbr>Each</a>
+								<a href="_ts_datastructures_hashtable_.hashtable.html#foreach" class="tsd-kind-icon">for<wbr>Each</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_ts_datastructures_map_.map.html#get" class="tsd-kind-icon">get</a>
+								<a href="_ts_datastructures_hashtable_.hashtable.html#get" class="tsd-kind-icon">get</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_ts_datastructures_map_.map.html#haskey" class="tsd-kind-icon">has<wbr>Key</a>
+								<a href="_ts_datastructures_hashtable_.hashtable.html#hashash" class="tsd-kind-icon">has<wbr>Hash</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_ts_datastructures_map_.map.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a>
+								<a href="_ts_datastructures_hashtable_.hashtable.html#hashcode" class="tsd-kind-icon">hash<wbr>Code</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_ts_datastructures_map_.map.html#keys" class="tsd-kind-icon">keys</a>
+								<a href="_ts_datastructures_hashtable_.hashtable.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_ts_datastructures_map_.map.html#remove" class="tsd-kind-icon">remove</a>
+								<a href="_ts_datastructures_hashtable_.hashtable.html#put" class="tsd-kind-icon">put</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_ts_datastructures_map_.map.html#set" class="tsd-kind-icon">set</a>
+								<a href="_ts_datastructures_hashtable_.hashtable.html#remove" class="tsd-kind-icon">remove</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_ts_datastructures_map_.map.html#size" class="tsd-kind-icon">size</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_ts_datastructures_map_.map.html#values" class="tsd-kind-icon">values</a>
+								<a href="_ts_datastructures_hashtable_.hashtable.html#size" class="tsd-kind-icon">size</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="_ts_datastructures_hashtable_.simpledict.html" class="tsd-kind-icon">Simple<wbr>Dict</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

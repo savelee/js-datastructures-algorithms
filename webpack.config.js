@@ -47,10 +47,10 @@ const plugins = [
     filename: 'examples/maps.html'
   }),
   new HtmlWebpackPlugin({
-    template: 'examples/hashmaps.html',
+    template: 'examples/hashtables.html',
     inject: true,
     chunks: ['app'],
-    filename: 'examples/hashmaps.html'
+    filename: 'examples/hashtables.html'
   }),
   new webpack.LoaderOptionsPlugin({
     options: {
