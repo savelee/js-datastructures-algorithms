@@ -1,5 +1,3 @@
-import { LinkedList } from "./LinkedList";
-
 /**
  * Simple Associative Array / Dictionary
  * @class SimpleDict

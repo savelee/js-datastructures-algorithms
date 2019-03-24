@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    Examples: Trees
+  </title>
+</head>
+
+<body>
+  Look in JS Console.
+</body>
+<script>
+
+let t = new Library.BinarySearchTree();
+t.insert(50);
+t.insert(17);
+t.insert(12);
+t.insert(9);
+t.insert(14);
+t.insert(63);
+t.insert(77);
+t.insert(23);
+t.insert(19);
+
+console.log(t.contains(14)); // true
+
+console.log(t.contains(15)); // false
+
+console.log(t.find(23));
+
+console.log(t.min()) //9
+
+console.log(t.max()) //63
+
+t.remove(9);
+
+console.log(t.contains(9)); // false
+
+console.log(t.min()) //12
+
+t.remove(50);
+
+console.log(t.getRootNodeValue());
+
+
+
+
+
+</script>
+</html>

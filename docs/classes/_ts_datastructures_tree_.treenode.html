@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Tree | datastructures-algorithms</title>
+	<title>TreeNode | datastructures-algorithms</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -59,21 +59,36 @@
 					<a href="../modules/_ts_datastructures_tree_.html">&quot;ts/datastructures/Tree&quot;</a>
 				</li>
 				<li>
-					<a href="_ts_datastructures_tree_.tree.html">Tree</a>
+					<a href="_ts_datastructures_tree_.treenode.html">TreeNode</a>
 				</li>
 			</ul>
-			<h1>Class Tree</h1>
+			<h1>Class TreeNode</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>TreeNode DataStructure</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>class</dt>
+						<dd><p>TreeNode</p>
+						</dd>
+						<dt>author</dt>
+						<dd><p>Lee Boonstra</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Tree</span>
+						<span class="target">TreeNode</span>
 					</li>
 				</ul>
 			</section>
@@ -84,13 +99,15 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_ts_datastructures_tree_.tree.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_ts_datastructures_tree_.treenode.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Methods</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ts_datastructures_tree_.tree.html#init" class="tsd-kind-icon">init</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_ts_datastructures_tree_.treenode.html#key" class="tsd-kind-icon">key</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_ts_datastructures_tree_.treenode.html#left" class="tsd-kind-icon">left</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_ts_datastructures_tree_.treenode.html#right" class="tsd-kind-icon">right</a></li>
 							</ul>
 						</section>
 					</div>
@@ -102,38 +119,63 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Tree<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_ts_datastructures_tree_.tree.html" class="tsd-signature-type">Tree</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Tree<wbr>Node<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, left<span class="tsd-signature-symbol">?: </span><a href="_ts_datastructures_tree_.treenode.html" class="tsd-signature-type">TreeNode</a>, right<span class="tsd-signature-symbol">?: </span><a href="_ts_datastructures_tree_.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_ts_datastructures_tree_.treenode.html" class="tsd-signature-type">TreeNode</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/19bbe27/src/ts/datastructures/Tree.ts#L1">ts/datastructures/Tree.ts:1</a></li>
+									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/3fb1930/src/ts/datastructures/Tree.ts#L10">ts/datastructures/Tree.ts:10</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="_ts_datastructures_tree_.tree.html" class="tsd-signature-type">Tree</a></h4>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>key: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> left: <a href="_ts_datastructures_tree_.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol"> =&nbsp;null</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> right: <a href="_ts_datastructures_tree_.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol"> =&nbsp;null</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_ts_datastructures_tree_.treenode.html" class="tsd-signature-type">TreeNode</a></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="init" class="tsd-anchor"></a>
-					<h3>init</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">init<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/19bbe27/src/ts/datastructures/Tree.ts#L7">ts/datastructures/Tree.ts:7</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="key" class="tsd-anchor"></a>
+					<h3>key</h3>
+					<div class="tsd-signature tsd-kind-icon">key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/3fb1930/src/ts/datastructures/Tree.ts#L8">ts/datastructures/Tree.ts:8</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="left" class="tsd-anchor"></a>
+					<h3>left</h3>
+					<div class="tsd-signature tsd-kind-icon">left<span class="tsd-signature-symbol">:</span> <a href="_ts_datastructures_tree_.treenode.html" class="tsd-signature-type">TreeNode</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/3fb1930/src/ts/datastructures/Tree.ts#L9">ts/datastructures/Tree.ts:9</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="right" class="tsd-anchor"></a>
+					<h3>right</h3>
+					<div class="tsd-signature tsd-kind-icon">right<span class="tsd-signature-symbol">:</span> <a href="_ts_datastructures_tree_.treenode.html" class="tsd-signature-type">TreeNode</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/savelee/js-datastructures-algorithms/blob/3fb1930/src/ts/datastructures/Tree.ts#L10">ts/datastructures/Tree.ts:10</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -174,16 +216,25 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="_ts_datastructures_tree_.binarysearchtree.html" class="tsd-kind-icon">Binary<wbr>Search<wbr>Tree</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_ts_datastructures_tree_.tree.html" class="tsd-kind-icon">Tree</a>
+						<a href="_ts_datastructures_tree_.treenode.html" class="tsd-kind-icon">Tree<wbr>Node</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="_ts_datastructures_tree_.tree.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="_ts_datastructures_tree_.treenode.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_ts_datastructures_tree_.tree.html#init" class="tsd-kind-icon">init</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_ts_datastructures_tree_.treenode.html#key" class="tsd-kind-icon">key</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_ts_datastructures_tree_.treenode.html#left" class="tsd-kind-icon">left</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_ts_datastructures_tree_.treenode.html#right" class="tsd-kind-icon">right</a>
 							</li>
 						</ul>
 					</li>

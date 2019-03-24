@@ -52,6 +52,12 @@ const plugins = [
     chunks: ['app'],
     filename: 'examples/hashtables.html'
   }),
+  new HtmlWebpackPlugin({
+    template: 'examples/trees.html',
+    inject: true,
+    chunks: ['app'],
+    filename: 'examples/trees.html'
+  }),
   new webpack.LoaderOptionsPlugin({
     options: {
       tslint: {

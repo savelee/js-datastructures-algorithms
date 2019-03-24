@@ -1,6 +1,6 @@
 import { HashTable } from '../ts/datastructures/HashTable';
 
-describe('ht.put() Set hash with key value pairs, great hashing function', () => {
+describe('hashtable.put() Set hash with key value pairs, great hashing function', () => {
     let ht = new HashTable({
         bucketSize: 0
     });
@@ -12,18 +12,18 @@ describe('ht.put() Set hash with key value pairs, great hashing function', () =>
     ht.put('jake', '+3465153347');
     ht.remove('ele');
 
-    it('ht.size(): Skip the duplicate, and remove one', () => {
+    it('hashtable.size(): Skip the duplicate, and remove one', () => {
         expect(ht.size()).toBe(4);
     });
-    it('ht.hasCode(): get correct code', () => {
+    it('hashtable.hasCode(): get correct code', () => {
         expect(ht.hashCode('lee')).toEqual(159891);
     });
-    it('ht.get(): Get one', () => {
+    it('hashtable.get(): Get one', () => {
         expect(ht.get('lee')).toBe('+3165153344');
     });
 });
 
-describe('ht.put() Set hash with key value pairs', () => {
+describe('hashtable.put() Set hash with key value pairs', () => {
     let ht = new HashTable({
         bucketSize: 5,
         uniqueKeys: true
@@ -35,20 +35,20 @@ describe('ht.put() Set hash with key value pairs', () => {
     ht.put('jake', '+3465153347');
     ht.remove('ele');
 
-    it('ht.size(): Remove one', () => {
+    it('hashtable.size(): Remove one', () => {
         expect(ht.size()).toBe(4);
     });
 
-    it('ht.isEmpty(): Not Empty', () => {
+    it('hashtable.isEmpty(): Not Empty', () => {
         expect(ht.isEmpty()).toBeFalsy();
     });
 
-    it('ht.get(): Get one', () => {
+    it('hashtable.get(): Get one', () => {
         expect(ht.get('david')).toBe('+3465153346');
     });
 });
 
-describe('ht.put() Set hash with key value pairs, use probing', () => {
+describe('hashtable.put() Set hash with key value pairs, use probing', () => {
     let ht = new HashTable({
         probe: true,
         bucketSize: 5
@@ -61,10 +61,10 @@ describe('ht.put() Set hash with key value pairs, use probing', () => {
     ht.put('jake', '+3465153347');
     ht.remove('ele');
 
-    it('ht.size(): Skip the duplicate, and remove one', () => {
+    it('hashtable.size(): Skip the duplicate, and remove one', () => {
         expect(ht.size()).toBe(5);
     });
-    it('ht.bucketSize: Bucket Size is higher than Hash total', () => {
+    it('hashtable.bucketSize: Bucket Size is higher than Hash total', () => {
         expect(ht.bucketSize).toBe(5);
     });
 });

@@ -4,7 +4,7 @@ import { LinkedList } from "./ts/datastructures/LinkedList";
 import { Set } from "./ts/datastructures/Set";
 import { Map } from "./ts/datastructures/Map";
 import { HashTable } from "./ts/datastructures/HashTable";
-import { Tree } from "./ts/datastructures/Tree";
+import { BinarySearchTree } from "./ts/datastructures/Tree";
 import { Graph } from "./ts/datastructures/Graph";
 
-module.exports =  { Stack, Queue, LinkedList, Set, Map, HashTable, Tree, Graph }
+module.exports =  { Stack, Queue, LinkedList, Set, Map, HashTable, BinarySearchTree, Graph }
