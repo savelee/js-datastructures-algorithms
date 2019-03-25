@@ -49,7 +49,7 @@ export class TreeNode {
  *
  *      ## Real world examples in Software Engineering?
  *      DOM (Document Object Model)
- *      ![Info Graphic](https://github.com/savelee/js-datastructures-algorithms/blob/master/docs/cheatsheets/Tree.png "Info Graphic")
+ *      ![Info Graphic](https://github.com/savelee/js-datastructures-algorithms/blob/master/images/Tree.png "Info Graphic")
 
  */
 export class BinarySearchTree {
