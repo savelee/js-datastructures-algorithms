@@ -49,6 +49,8 @@ export class TreeNode {
  *
  *      ## Real world examples in Software Engineering?
  *      DOM (Document Object Model)
+ *      ![Info Graphic](../../../docs/cheatsheets/Tree.png "Info Graphic")
+
  */
 export class BinarySearchTree {
     private root: TreeNode;
