@@ -26,29 +26,43 @@ t.insert(77);
 t.insert(23);
 t.insert(19);
 
+/*
+// Create, remove tree
+// find node, min node, max node
 console.log(t.contains(14)); // true
-
 console.log(t.contains(15)); // false
-
 console.log(t.find(23));
-
 console.log(t.min()) //9
-
 console.log(t.max()) //63
-
 t.remove(9);
-
 console.log(t.contains(9)); // false
-
 console.log(t.min()) //12
-
 t.remove(50);
-
 console.log(t.getRootNodeValue());
+*/
 
+// Tree Heights
+console.log(t.getMinHeight()) //1
+//console.log(t.getMaxHeight()) //3
+console.log(t.isBalanced()) //false (node 63, has no node on the left)
 
+// Tree traversal
 
+console.log(t.traverse({
+  'method': 'inOrder'
+})); //9,12,14,17,19,23,50,63,77
 
+console.log(t.traverse({
+  'method': 'preOrder'
+})); //50,17,12,9,14,23,19,63,77
+
+console.log(t.traverse({
+  'method': 'postOrder'
+})); //9,14,19,12,23,17,77,63,50
+
+console.log(t.traverse({
+  'method': 'levelOrder'
+})); //50,17,63,12,23,77,9,14,19
 
 </script>
 </html>

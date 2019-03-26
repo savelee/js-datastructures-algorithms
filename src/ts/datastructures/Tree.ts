@@ -49,8 +49,6 @@ export class TreeNode {
  *
  *      ## Real world examples in Software Engineering?
  *      DOM (Document Object Model)
- *      ![Info Graphic](https://github.com/savelee/js-datastructures-algorithms/blob/master/images/Tree.png "Info Graphic")
-
  */
 export class BinarySearchTree {
     private root: TreeNode;
@@ -275,11 +273,79 @@ export class BinarySearchTree {
 
 
     /**
-     * Get the Tree Height
-     * @param {Function} callback
+     * Get the Tree Min Height
+     * Recursive Function
+     * @param {TreeNode} node - (default) rootNode
+     * @returns {number} minHeight - of the tree
      */
-    getHeight(callback: Function): void {
+    getMinHeight(node = this.root): number {
+        let minHeight = -1;
+        if (node != null) {
+            let leftBranche = this.getMinHeight(node.left);
+            let rightBranche = this.getMinHeight(node.right);
+            console.log("leftBranche=" + leftBranche);
+            console.log("rightBranche=" + rightBranche);
+            
+            if (leftBranche < rightBranche) {
+                minHeight = leftBranche + 1;
+            } else {
+                minHeight = rightBranche + 1;
+            }
+        }
+        return minHeight;
+    }
 
+    /**
+     * Get the Tree Max Height
+     * @param {TreeNode} node - (default) rootNode
+     * @returns {number} maxHeight - of the tree
+     */
+    getMaxHeight(node = this.root): number {
+        let maxHeight = -1;
+        if (node != null) {
+            let leftBranch = this.getMaxHeight(node.left);
+            let rightBranch = this.getMaxHeight(node.right);
+
+            if (leftBranch > rightBranch) {
+                maxHeight = leftBranch + 1;
+            } else {
+                maxHeight = rightBranch + 1;
+            }
+        }
+        return maxHeight;
+    }
+
+    /**
+     * Is Tree Balanced? A tree is balanced when the branches are equal or have 1 level difference.
+     * @returns {boolean} if the Tree is Balanced
+     */
+    isBalanced(): boolean {
+        return(this.getMinHeight()
+            >= this.getMaxHeight() - 1);
+    }
+
+    /**
+     * Get the Tree Max Height
+     * @param {object} opt
+     * @param {string} opt.method - inOrder | preOrder | postOrder | levelOrder (default inOrder); 
+     */
+    traverse(opt: any): void {
+        let method = "";
+        if (opt.method) {
+            method = opt.method.toLowerCase();
+        }
+        /*switch (method) {
+            case "inorder":
+                this.inorder();
+            case "preorder":
+                this.preorder();
+            case "postorder":
+                this.postorder();
+            case "levelorder":
+                this.levelorder();
+            default:
+                this.inorder();
+        }*/
     }
 
     /**
@@ -303,6 +369,14 @@ export class BinarySearchTree {
      * @param {Function} callback
      */
     postorder(callback: Function): void {
+
+    }
+    
+    /**
+     * Traverses nodes of a tree with BFS
+     * @param {Function} callback
+     */
+    levelorder(callback: Function): void {
 
     }
 }
