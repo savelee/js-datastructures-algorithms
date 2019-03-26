@@ -58,6 +58,12 @@ const plugins = [
     chunks: ['app'],
     filename: 'examples/trees.html'
   }),
+  new HtmlWebpackPlugin({
+    template: 'examples/graphs.html',
+    inject: true,
+    chunks: ['app'],
+    filename: 'examples/graphs.html'
+  }),
   new webpack.LoaderOptionsPlugin({
     options: {
       tslint: {
