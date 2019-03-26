@@ -42,22 +42,22 @@ DOM (Document Object Model)
     end with right leaf node.
     All numbers will be in order.
   </p>
-  <img id="images/inorder.png" width="250" />
+  <img src="images/inorder.png" width="250" />
   
   <p>
     Pre order. Start with root nodes, before the leafs.
     Follow each branch.
   </p>
-  <img id="images/preorder.png" width="250" />
+  <img src="images/preorder.png" width="250" />
   
   <p>
     Post order. Start with all the leaf nodes first.
     From leaf to leaf, then the parents, then the
     next branch. End with root node.
   </p>
-  <img id="images/postorder.png" width="250" />
+  <img src="images/postorder.png" width="250" />
 
   <p>Level order. Start from the root node, and continue
     traversing for each level. End with the far right leaf node.
   </p>
-  <img id="images/levelorder.png" width="250" />
+  <img src="images/levelorder.png" width="250" />
