@@ -279,20 +279,31 @@ export class BinarySearchTree {
      * @returns {number} minHeight - of the tree
      */
     getMinHeight(node = this.root): number {
-        let minHeight = -1;
-        if (node != null) {
-            let leftBranche = this.getMinHeight(node.left);
-            let rightBranche = this.getMinHeight(node.right);
-            console.log("leftBranche=" + leftBranche);
-            console.log("rightBranche=" + rightBranche);
-            
-            if (leftBranche < rightBranche) {
-                minHeight = leftBranche + 1;
-            } else {
-                minHeight = rightBranche + 1;
-            }
+        if (node == null) {
+            // every time when you reach the leaf node
+            // return -1, so it's a number;
+            return -1;
         }
-        return minHeight;
+
+        // when node is not null, so it's not a leaf
+        // call this function again, passing in the
+        // previous node, that way you are walking
+        // through all the lefts, and all the rights.
+        let leftBranch = this.getMinHeight(node.left);
+        let rightBranch = this.getMinHeight(node.right);
+
+        // when the left branche is smaller
+        // start walking left, otherwise
+        // walk through the right branche
+        // and start counting (+1) till the end (null)
+
+        // the branch that's the smallest
+        // will contain the min height
+        if (leftBranch < rightBranch) {
+            return leftBranch + 1;
+        } else {
+            return rightBranch + 1;
+        }
     }
 
     /**
@@ -301,18 +312,31 @@ export class BinarySearchTree {
      * @returns {number} maxHeight - of the tree
      */
     getMaxHeight(node = this.root): number {
-        let maxHeight = -1;
-        if (node != null) {
-            let leftBranch = this.getMaxHeight(node.left);
-            let rightBranch = this.getMaxHeight(node.right);
-
-            if (leftBranch > rightBranch) {
-                maxHeight = leftBranch + 1;
-            } else {
-                maxHeight = rightBranch + 1;
-            }
+        if (node == null) {
+            // every time when you reach the leaf node
+            // return -1, so it's a number;
+            return -1;
         }
-        return maxHeight;
+
+        // when node is not null, so it's not a leaf
+        // call this function again, passing in the
+        // previous node, that way you are walking
+        // through all the lefts, and all the rights.
+        let leftBranch = this.getMaxHeight(node.left);
+        let rightBranch = this.getMaxHeight(node.right);
+
+        // when the left branche is bigger
+        // start walking left, otherwise
+        // walk through the right branche
+        // and start counting (+1) till the end (null)
+
+        // the branch that's the biggest
+        // will contain the max height
+        if (leftBranch > rightBranch) {
+            return leftBranch + 1;
+        } else {
+            return rightBranch + 1;
+        }
     }
 
     /**
@@ -328,55 +352,184 @@ export class BinarySearchTree {
      * Get the Tree Max Height
      * @param {object} opt
      * @param {string} opt.method - inOrder | preOrder | postOrder | levelOrder (default inOrder); 
+     * @returns {array} - sorted array
      */
-    traverse(opt: any): void {
+    traverse(opt: any): any {
+        let array = new Array();
         let method = "";
         if (opt.method) {
             method = opt.method.toLowerCase();
         }
-        /*switch (method) {
+        console.log(method);
+        switch (method) {
             case "inorder":
-                this.inorder();
+                array = this.inorder();
+                break;
             case "preorder":
-                this.preorder();
+                array = this.preorder();
+                break;
             case "postorder":
-                this.postorder();
+                array = this.postorder();
+                break;
             case "levelorder":
-                this.levelorder();
+                array = this.levelorder();
+                break;
             default:
-                this.inorder();
-        }*/
+                array = this.inorder();
+        }
+
+        return array;
     }
 
     /**
      * Traverses nodes of a tree with DFS
-     * @param {Function} callback
+     * @returns {array} - return an inorder array
      */
-    inorder(callback: Function): void {
+    inorder(): any[] {
+        if (this.root == null) {
+            // check if there's a BST
+            // and if there are values
+            // in it
+            console.log("root = null");
+            return null;
+        } else {
+            let result = new Array();
+            // recursive function
+            function traverseInOrder(node: TreeNode) {
+                // we start from the root node.
 
+                // if the current node has a node.left
+                // then call this function
+                // again but pass in the left node
+                // else ignore
+                // if (node.left) console.log("execute if node " + node.key + " has a left: " + node.left.key);
+                node.left && traverseInOrder(node.left);
+
+                // and then add the value to the array
+                // so for everytime you called the 
+                // function, you still will add values
+                // to the array
+                // console.log("push in array " + node.key);
+                result.push(node.key);
+
+                // next, check if the current node has
+                // a right node. else ignore
+                // in case not, go up
+                // pass that node to the array
+
+                // if node.right does exist call this function
+                // again but pass in the right node
+                // if (node.right) console.log("execute if node " + node.key + " has a right: " + node.right.key);
+                node.right && traverseInOrder(node.right);
+            }
+            traverseInOrder(this.root);
+            return result;
+        }
     }
 
     /**
      * Traverses nodes of a tree with BFS
-     * @param {Function} callback
+     * @returns {array} - return an preorder array
      */
-    preorder(callback: Function): void {
-
+    preorder(): any[] {
+        if (this.root == null) {
+            // check if there's a BST
+            // and if there are values
+            // in it
+            return null;
+        } else {
+            let result = new Array();
+            // recursive function
+            function traversePreOrder(node: TreeNode) {
+                // add the key in the results array
+                result.push(node.key);
+                // if node.left exist call this function
+                // again but pass in the left node
+                node.left && traversePreOrder(node.left);
+                // if node.right exist call this function
+                // again but pass in the right node
+                node.right && traversePreOrder(node.right);
+            }
+            traversePreOrder(this.root);
+            return result;
+        }
     }
 
     /**
      * Traverses nodes of a tree with BFS
-     * @param {Function} callback
+     * @returns {array} - return an postorder array
      */
-    postorder(callback: Function): void {
-
+    postorder(): any[] {
+        if (this.root == null) {
+            // check if there's a BST
+            // and if there are values
+            // in it
+            return null;
+        } else {
+            let result = new Array();
+            // recursive function
+            function traversePostOrder(node: TreeNode) {
+                // if node.left exist call this function
+                // again but pass in the left node
+                node.left && traversePostOrder(node.left);
+                // if node.right exist call this function
+                // again but pass in the right node
+                node.right && traversePostOrder(node.right);
+                // add the key in the results array
+                result.push(node.key);
+            }
+            traversePostOrder(this.root);
+            return result;
+        }
     }
-    
-    /**
-     * Traverses nodes of a tree with BFS
-     * @param {Function} callback
-     */
-    levelorder(callback: Function): void {
 
+    /**
+     * Traverses nodes for each level
+     * @returns {array} - return an level order array
+     */
+    levelorder(): any {
+        let results = [];
+        let queue = [];
+        if (this.root != null) {
+            queue.push(this.root);
+            // now we will loop
+            // as long as there are
+            // items in the queue
+            while (queue.length > 0) {
+                let node = queue.shift();
+                // takes the first element in the
+                // array and remove that element
+                // so we will start with the rootnode
+                // in the queue. and after shifting
+                // it's not in the queue anymore
+
+                // we can put the key in the results array
+                results.push(node.key);
+
+                if (node.left != null) {
+                    // console.log(node.key + " has a left node: " + node.left.key)
+                    // when there is a left node
+                    // we can put it to the queue
+                    // so the while loop won't stop
+                    queue.push(node.left);
+                }
+                if (node.right != null) {
+                    // console.log(node.key + " has a right node: " + node.right.key)
+            
+                    // when there is a right node
+                    // we can put it to the queue
+                    // so the while loop won't stop
+                    queue.push(node.right);
+                }
+
+                // when there are items in the queue,
+                // we can start adding it to the results
+                // array, and start checking for the next
+                // level.
+            }
+            return results;
+        } else {
+            return null;
+        }
     }
 }

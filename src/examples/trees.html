@@ -43,11 +43,10 @@ console.log(t.getRootNodeValue());
 
 // Tree Heights
 console.log(t.getMinHeight()) //1
-//console.log(t.getMaxHeight()) //3
+console.log(t.getMaxHeight()) //3
 console.log(t.isBalanced()) //false (node 63, has no node on the left)
 
 // Tree traversal
-
 console.log(t.traverse({
   'method': 'inOrder'
 })); //9,12,14,17,19,23,50,63,77
@@ -58,7 +57,7 @@ console.log(t.traverse({
 
 console.log(t.traverse({
   'method': 'postOrder'
-})); //9,14,19,12,23,17,77,63,50
+})); //9,14,12,19,23,17,77,63,50
 
 console.log(t.traverse({
   'method': 'levelOrder'
