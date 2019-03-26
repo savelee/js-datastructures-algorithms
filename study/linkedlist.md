@@ -11,3 +11,7 @@ each light from beginning (head) to end (tail).
 ## Real world examples in Software Engineering?
 
 History and Subversioning? A trial of revisions and you can add branches?
+
+## Info Graphic
+![Info Graphic](https://github.com/savelee/js-datastructures-algorithms/blob/master/study/images/LinkedList.png "Info Graphic")
+
