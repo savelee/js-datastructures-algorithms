@@ -349,7 +349,7 @@ export class BinarySearchTree {
     }
 
     /**
-     * Get the Tree Max Height
+     * Traverse the tree
      * @param {object} opt
      * @param {string} opt.method - inOrder | preOrder | postOrder | levelOrder (default inOrder); 
      * @returns {array} - sorted array

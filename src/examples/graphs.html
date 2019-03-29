@@ -14,6 +14,33 @@
   Look in JS Console.
 </body>
 <script>
+let graph = new Library.Graph();
+const myVertices = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+
+// add vertices
+for(let i = 0; i < myVertices.length; i++){
+  graph.addVertex(myVertices[i]);
+}
+
+// add edges
+graph.addEdge('A', 'C');
+graph.addEdge('A', 'B');
+graph.addEdge('A', 'D');
+graph.addEdge('B', 'D');
+graph.addEdge('B', 'G');
+graph.addEdge('D', 'F');
+
+console.log(graph.getVertices());
+
+console.log(graph.getAdjacents());
+
+console.log(graph.toString());
+
+// this should visit the graph first widely and then deeply
+console.log(graph.traverse(graph, myVertices[0], { method: 'bfs' }));
+
+//console.log(graph.traverse({method: 'dfs'}));
+
 
 </script>
 </html>
