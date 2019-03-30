@@ -6,5 +6,6 @@ import { Map } from "./ts/datastructures/Map";
 import { HashTable } from "./ts/datastructures/HashTable";
 import { BinarySearchTree } from "./ts/datastructures/Tree";
 import { Graph } from "./ts/datastructures/Graph";
+import { SimpleDict } from "./ts/datastructures/SimpleDict";
 
-module.exports =  { Stack, Queue, LinkedList, Set, Map, HashTable, BinarySearchTree, Graph }
+module.exports =  { Stack, Queue, LinkedList, Set, Map, HashTable, BinarySearchTree, Graph, SimpleDict }

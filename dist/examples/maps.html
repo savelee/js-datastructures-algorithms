@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    Examples: Map
+  </title>
+</head>
+
+<body>
+  Look in JS Console.
+<script type="text/javascript" src="../app.bundle.js"></script></body>
+<script>
+let map = new Library.Map();
+
+map.set('a01', 'lee');
+map.set('b02', 'michele');
+map.set('a03', 'jake');
+
+console.log(map.size());
+console.log(map);
+
+console.log("Keys");
+console.log(map.keys());
+
+console.log("Values");
+console.log(map.values());
+
+console.log("For Each");
+map.forEach(function(k, v, s){
+    console.log(k, v, s);
+});
+
+
+</script>
+</html>

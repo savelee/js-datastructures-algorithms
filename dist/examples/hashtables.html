@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    Examples: HashTable
+  </title>
+</head>
+
+<body>
+  Look in JS Console.
+<script type="text/javascript" src="../app.bundle.js"></script></body>
+<script>
+
+let ht = new Library.HashTable({
+  probe: true,
+  bucketSize: 5
+});
+ht.put('michele', '+316515335');
+ht.put('lee', '+316515335'); // skipped key needs to be unique
+ht.put('ele', '+3165153344');
+ht.put('david', '+3465153346');
+ht.put('jake', '+3465153347');
+ht.remove('ele');
+
+console.log(ht);
+
+console.log(ht.get('david')); // 3465153346
+console.log(ht.size()); // 5
+
+console.log(ht.isEmpty()); // false
+
+//ht.clear();
+//console.log(ht.isEmpty()); // true
+
+//ht.forEach(function(k, v, h){
+//    console.log(k, v, h);
+//});
+
+
+
+</script>
+</html>

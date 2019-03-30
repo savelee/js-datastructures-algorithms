@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    Examples: LinkedLists
+  </title>
+</head>
+
+<body>
+  Look in JS Console.
+<script type="text/javascript" src="../app.bundle.js"></script></body>
+<script>
+const ll = new Library.LinkedList();
+// console.log(ll.isEmpty()); // true
+// console.log(ll.size()); // 0
+ll.push('a');
+// console.log(ll.size()); // 1
+// console.log(ll.isEmpty()); // false
+ll.push('b');
+// console.log(ll.size()); //2
+ll.push('c');
+ll.push('d');
+ll.push('e');
+ll.push('f');
+// console.log("getNodeAt(2)");
+// console.log(ll.getNodeAt(2)) // c (index = 0 based)
+// console.log(ll.indexOf('d')); // 3
+// console.log(ll.indexOf('c')); // 2
+// console.log(ll.indexOf('doesntexist')); // -1
+//console.log(ll.values());
+//ll.remove('doesntexit'); // show error
+console.log(ll.values());
+//ll.remove('c');
+//console.log(ll.indexOf('c')); // -1
+
+ll.insert(2, 'xxx');
+console.log(ll.size());
+
+</script>
+</html>

@@ -1,182 +1,153 @@
-import { SimpleDict } from './Map';
-import { Queue } from './Queue';
+import { LinkedList } from '../datastructures/LinkedList';
+import { SimpleDict } from '../datastructures/SimpleDict';
 
 /**
- * Graph DataStructure
+ * Each node object  / Vertex
+ * @class GraphNode
+ * @author Lee Boonstra
+ * @param {string} id - string with the node id
+ */
+export class GraphNode {
+    public id: string;
+    public adjacents: Array<string>;
+
+    constructor(id: string) {
+        this.id = id;
+        this.adjacents = new Array();
+    }
+}
+
+/**
+ * Create a Graph
  * @class Graph
  * @author Lee Boonstra
- *
- * # What do we know about Graphs?
- * A Graph is an abstract model of a network structure.
- * It contains a set of nodes, which are called **vertices**.
- * The vertices are connected by **edges**.
- * Graphs have some similarities with Trees.
- * They can also make use of the Breadth First Search (BFS)
- * and Depth First (DFS) algorithms.
- *
- * ## Real world examples in Software Engineering?
- * A Graph to display a roads, flights, communications.
+ * @param {array} nodeIds - An array with all the string ids to be created
+ * @param {array} matrix - A 2 dimensional array (matrix), used as an adjacency list
  */
 export class Graph {
-    public isDirected: Boolean;
-    private vertices: any[];
-    private adjList: SimpleDict;
+    private vertices: Object;
+    private nodeIds: any[];
+    public matrix: any[];
 
-    constructor(isDirected = false) {
-        this.isDirected = isDirected;
-        this.vertices = [];
-        this.adjList = new SimpleDict();
-    }
+    constructor (nodeIds: Array<string>, matrix: any) {
+        this.matrix = matrix;
+        this.nodeIds = nodeIds;
+        this.vertices = {};
 
-    /**
-     * Add a vertice to the vertices array
-     * @param {string} v - Vertice
-     */
-    addVertex(v: string): void {
-        if (!this.vertices.includes('v')) {
-            this.vertices.push(v);
-            let adjacents = new Array();
-            this.adjList.set(v, adjacents);
-        }
-    }
-
-    /**
-     * Create an edge between two vertices.
-     * @param {string} v - Vertical 1
-     * @param {string} w Vertical 2
-     */
-    addEdge(v: string, w: string): void {
-        if (!this.adjList.get(v)) {
-            // the vertex doesn't exist
-            // so please create
-            this.addVertex(v);
-        }
-        if (!this.adjList.get(w)) {
-            // the other vertice doesn't exist
-            // so please create
-            this.addVertex(w);
+        // the matrix should have for each row a vertex
+        if (nodeIds.length !== this.matrix.length) {
+            throw "The size of the matrix doesn't contain the total of vertices";
         }
 
-        this.adjList.get(v).push(w);
-        if (!this.isDirected) {
-            this.adjList.get(w).push(v);
-        }
-    }
+        // loop through the array rows
+        for (let i = 0; i < matrix.length; i++) {
+            // create a vertex node, for each row in the matrix
+            let node = new GraphNode(this.nodeIds[i]);
 
-    /**
-     * Return the array with Vertices
-     * @returns {Array} vertices (nodes array)
-     */
-    getVertices(): any[] {
-        return this.vertices;
-    }
-
-    /**
-     * Return the Dictionairy with adjacents.
-     * @returns {SimpleDict} - Adjacents (vertices with edges)
-     */
-    getAdjacents(): SimpleDict {
-        return this.adjList;
-    }
-
-    /**
-     * Traverse the graph
-     * @param {string} vertex - Vertex to start traversing from
-     * @param {object} opt
-     * @param {string} opt.method - bfs | dfs default (bfs)
-     */
-    traverse(graph: Graph, vertex: string, opt: any): any[] {
-        let method = "";
-        let array = new Array();
-        if (opt.method) {
-            method = opt.method.toLowerCase();
-        }
-        switch (method) {
-            case 'bfs':
-                array = this._bfs(graph, vertex);
-                break;
-            case 'dfs':
-                array = this._bfs(graph, vertex);
-                break;
-            default:
-                array = this._bfs(graph, vertex);
-        }
-
-        return array;
-    }
-
-    /**
-     * Breadth First Search
-     * This should travarse the graph first widely and then deeply.
-     * It first visits the direct neigbors and afterwards it will go
-     * a level deeper. The point of this, is so you can calculate the difference
-     * between nodes.
-     * @param {Graph} graph - current Graph
-     * @param {string} startVertex - vertex to start from
-     * @param {Function} cb - Callback function (optional)
-     */
-    _bfs(graph: Graph, startVertex: string): any[] {
-        const allAdjacents = graph.getAdjacents();
-        const queue = new Queue();
-        let visited = {};
-        let results = new Array();
-
-        console.log('startVertex ' + startVertex);
-        // put the start vertex in the queue
-        queue.add(startVertex);
-
-        // as long as there are vertices in the queue
-        // keep looping
-        while (!queue.isEmpty()) {
-            // remove the first in the queue
-            const vertex = queue.remove();
-            // mark as visited
-            visited[vertex] = 'visited';
-            // these are the adjacents of the dequeued vertex
-            const adjacents = allAdjacents.get(vertex);
-     
-            // if the vertex has adjacents
-            if (vertex) {
-                results.push(vertex);
-
-                for (let i = 0; i <= adjacents.length; i++) {
-                    const connectedVertex = adjacents[i];
-                    // if it hasn't been visited add it to the queue
-                    if (!visited[connectedVertex]) {
-                        queue.add(connectedVertex);
-                    }
+            // loop through all the adjacents
+            for (let j = 0; j < this.matrix[i].length; j++) {
+                // Add the adjacent, when it's marked
+                // as one in the matrix.
+                if (matrix[i][j] === 1) {
+                    node.adjacents.push(this.nodeIds[j]);
                 }
             }
+
+            // each vertex gets a row in the vertices array
+            this.vertices[node.id] = node;
         }
 
-        return results;
+        console.log(this.vertices);
     }
 
-    dfs(): any[] {
-        let arr;
 
-        return arr;
+
+    /**
+     * Get the Node that belongs to a particular node id.
+     * @param {number} nodeId - Node id to look for
+     * @returns {Node} node - The matching node
+     */
+    getNode(nodeId: string): GraphNode {
+        return this.vertices[nodeId];
     }
 
-    _printVertex(value: string): void {
-        console.log(`Visited vertex: ${value}`)
+    addNode() {
+
+
+
+
+    }
+
+    addEdge() {
+
     }
 
     /**
-     * Helper, to String
-     * @returns {string} s - everything to string
+     * Check if Path exist via Depth First Search
+     * Go deep into nodes, before exploring other nodes.
+     * Recursive Function
+     * @param {string} startId - The Node Id to start searching from
+     * @param {string} destinationId = The Node Id that needs to be found
+     * @returns {boolean} pathExists = return true if a path was found
      */
-    toString(): string {
-        let s = '';
-        for (let i = 0; i < this.vertices.length; i++) {
-            s += `${this.vertices[i]}: `;
-            const adjacents = this.adjList.get(this.vertices[i]);
-            for (let j = 0; j < adjacents.length; j++) {
-                s += `  ${adjacents[j]}`
-            };
-            s += `\n`;
+    public hasPathDfs(startId: string, destinationId: string): boolean {
+        let pathExists = false;
+        let source = this.getNode(startId);
+        let destination = this.getNode(destinationId);
+        let visited = new SimpleDict();
+
+        pathExists = this._hasPathDfs(source, destination, visited);
+
+        return pathExists;
+    }
+
+
+    /**
+     * Check if Path exist via Depth First Search
+     * Go deep into nodes, before exploring other nodes.
+     * Recursive Function
+     * @param {number} startId - The Node Id to start searching from
+     * @param {number} destinationId = The Node Id that needs to be found
+     * @returns {boolean} pathExists = return true if a path was found
+     */
+    private _hasPathDfs(source: GraphNode, destination: GraphNode, visited: SimpleDict): boolean {
+        if (visited.hasKey(source.id)) {
+            // you have visited the node before
+            // this is also the part thats would
+            // stop the recursive function
+            return false;
         }
 
-        return s;
+        visited.set(source.id, true);
+
+        // the node you are looking for
+        // is the same as the destination
+        if (source.id === destination.id) {
+            console.log(source.id, destination.id);
+            return true;
+        }
+
+        // now look into its adjacents
+        for (let id of source.adjacents) {
+            let node = this.getNode(id);
+            // recursive, keep looking in its neighbors
+            if (this._hasPathDfs(node, destination, visited)) return true;
+        }
+
+        return false;
     }
+
+    /**
+     * Check if Path exist via Breath First Search
+     * Go wide, and first check all neighbor nodes. (adjacents) before going deep.
+     * Need a Queue / LinkedList for this
+     */
+    hasPathBfs(startId: number, destinationId: number): boolean {
+        let pathExists = false;
+
+        // TODO
+
+        return pathExists;
+    }
+
 }

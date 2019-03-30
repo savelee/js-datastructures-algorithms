@@ -1,4 +1,4 @@
-import { SimpleDict } from './Map';
+import { SimpleDict } from './SimpleDict';
 
 /**
  * HashTable Data Structure
