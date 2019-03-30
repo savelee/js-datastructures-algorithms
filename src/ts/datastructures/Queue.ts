@@ -20,8 +20,8 @@ export class Queue {
     constructor() {
         // Based on an Array
         this.items = [];
-        // Set the total to 0
-        this.total = 0;
+        // A queue needs at least one person.
+        this.total = 1;
         // Set the count to 0
         // Compared to Stacks, this is what makes this class different!
         this.count = 0;
@@ -34,7 +34,7 @@ export class Queue {
      * @param item any
      */
     add(item: any) {
-        this.items[this.total] = item;
+        this.items[this.items.length] = item;
         this.total++;
     }
 
@@ -79,7 +79,7 @@ export class Queue {
     * @return Boolean
     */
     isEmpty(): Boolean {
-        return (this.total === 0);
+        return (this.total <= 1);
     }
 
     /**
@@ -89,7 +89,7 @@ export class Queue {
     clear() {
         if (!this.isEmpty()) {
             this.items = [];
-            this.total = 0;
+            this.total = 1;
             this.count = 0; // reset counter
         }
     }
@@ -105,7 +105,7 @@ export class Queue {
         // since we are removing values from the array
         // the array is not shifting.
 
-        return this.total;
+        return this.total - 1;
     }
 
     /**

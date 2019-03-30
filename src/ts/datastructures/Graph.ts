@@ -1,4 +1,4 @@
-import { LinkedList } from '../datastructures/LinkedList';
+import { Queue } from '../datastructures/Queue';
 import { SimpleDict } from '../datastructures/SimpleDict';
 
 /**
@@ -106,9 +106,10 @@ export class Graph {
      * Check if Path exist via Depth First Search
      * Go deep into nodes, before exploring other nodes.
      * Recursive Function
-     * @param {number} startId - The Node Id to start searching from
-     * @param {number} destinationId = The Node Id that needs to be found
-     * @returns {boolean} pathExists = return true if a path was found
+     * @param {GraphNode} source - The Node to start searching from
+     * @param {GraphNode} destination - The Node that needs to be found
+     * @param {SimpleDict} visited - A Simple Dictionary holding the references to the visisted vertices
+     * @returns {boolean} pathExists - return true if a path was found
      */
     private _hasPathDfs(source: GraphNode, destination: GraphNode, visited: SimpleDict): boolean {
         if (visited.hasKey(source.id)) {
@@ -123,7 +124,6 @@ export class Graph {
         // the node you are looking for
         // is the same as the destination
         if (source.id === destination.id) {
-            console.log(source.id, destination.id);
             return true;
         }
 
@@ -140,14 +140,64 @@ export class Graph {
     /**
      * Check if Path exist via Breath First Search
      * Go wide, and first check all neighbor nodes. (adjacents) before going deep.
-     * Need a Queue / LinkedList for this
+     * Need a Queue for this
+     * @param {string} startId - The Node Id to start searching from
+     * @param {string} destinationId = The Node Id that needs to be found
+     * @returns {boolean} pathExists = return true if a path was found
      */
-    hasPathBfs(startId: number, destinationId: number): boolean {
+    public hasPathBfs(startId: string, destinationId: string): boolean {
         let pathExists = false;
+        let source = this.getNode(startId);
+        let destination = this.getNode(destinationId);
+        let visited = new SimpleDict();
 
-        // TODO
+        pathExists = this._hasPathBfs(source, destination, visited);
 
         return pathExists;
     }
 
+
+    /**
+     * Check if Path exist via Breath First Search
+     * Go wide, and first check all neighbor nodes. (adjacents) before going deep.
+     * Need a Queue for this
+     * @param {GraphNode} source - The Node to start searching from
+     * @param {GraphNode} destination - The Node that needs to be found
+     * @param {SimpleDict} visited - A Simple Dictionary holding the references to the visisted vertices
+     * @returns {boolean} pathExists - return true if a path was found
+     */
+    private _hasPathBfs(source: GraphNode, destination: GraphNode, visited: SimpleDict): boolean {
+        let queue = new Queue();
+        queue.add(source);
+
+        while (!queue.isEmpty()) {
+            // as long as there are items in the queue
+            // keep running this
+
+            // get the item from the queue
+            let node = queue.remove();
+
+            // the node you are looking for
+            // is the same as the destination
+            if (node === destination) {
+                return true;
+            }
+
+            if (visited.hasKey(node.id)) {
+                // you have visited the node before
+                // the continue statement "jumps over" one iteration in the loop.
+                continue;
+            }
+
+            visited.set(node.id, true);
+
+            // now look into its adjacents
+            for (let id of node.adjacents) {
+                let neighbor = this.getNode(id);
+                queue.add(neighbor);
+            }
+        }
+
+        return false;
+    }
 }
