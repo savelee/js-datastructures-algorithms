@@ -54,7 +54,7 @@ F:   D
 G:   B
 */
 
-let matrix = [
+/*let matrix = [
   [0, 1, 1, 1, 0, 0, 0],
   [1, 0, 0, 1, 0, 0, 1],
   [1, 0, 0, 0, 0, 0, 0],
@@ -62,14 +62,31 @@ let matrix = [
   [0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 1, 0, 0, 0],
   [0, 1, 0, 0, 0, 0, 0]
+];*/
+
+let matrix = [
+  [0, 1, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0],
+  [1, 1, 0, 0, 0, 1, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 1, 0, 0, 0],
+  [0, 1, 0, 0, 0, 0, 0]
 ];
+
+
 const myVertices = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
 let graph = new Library.Graph(myVertices, matrix);
 
+/*
 console.log(graph.hasPathDfs('A', 'B'));
 console.log(graph.hasPathDfs('A', 'G'));
 console.log(graph.hasPathDfs('E', 'B'));
+*/
 
+console.log(graph.hasPathBfs('A', 'B'));
+console.log(graph.hasPathBfs('A', 'G')); //A - B - G - so true
+console.log(graph.hasPathBfs('E', 'B'));
 
 </script>
 </html>

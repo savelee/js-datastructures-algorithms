@@ -15,7 +15,21 @@
 <script type="text/javascript" src="../app.bundle.js"></script></body>
 <script>
 const line = new Library.Queue();
+line.add('Lee - 0');
+line.add('Michele - 1');
+line.add('David - 2');
+line.add('Jake - 3');
 
+console.log(line.size());
+
+console.log(line.remove());
+console.log(line.remove());
+console.log(line.remove());
+console.log(line);
+console.log(line.size());
+
+
+/*
 console.log(line.isEmpty()); // true
 
 line.add('Lee - 0');
@@ -46,6 +60,6 @@ line.clear();
 
 console.log(line.size()); // 0
 console.log(line.isEmpty()); // true
-
+*/
 </script>
 </html>

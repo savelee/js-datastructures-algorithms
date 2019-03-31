@@ -12,6 +12,10 @@ These Data Structures are exposed on global object: `Library`.
 * [Tree](https://github.com/savelee/js-datastructures-algorithms/blob/master/src/ts/datastructures/Tree.ts) & [Notes](https://github.com/savelee/js-datastructures-algorithms/blob/master/study/tree.md)
 * [Graph](https://github.com/savelee/js-datastructures-algorithms/blob/master/src/ts/datastructures/Graph.ts) & [Notes](https://github.com/savelee/js-datastructures-algorithms/blob/master/study/graph.md)
 
+These Algorithms are exposed on global object: `Library`.
+
+* [Sorting Algorithms](https://github.com/savelee/js-datastructures-algorithms/blob/master/src/ts/algorithms/Sorters.ts) & [Notes](https://github.com/savelee/js-datastructures-algorithms/blob/master/study/sorting.md)
+
 ## Directory Structure
 
 * src/ts/datastructures - Data Structures in TypeScript

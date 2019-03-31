@@ -36,6 +36,10 @@ describe('graph.hasDfs()', () => {
     it('graph.hasDfs() - Has Path?: E -> B', () => {
         expect(graph.hasPathDfs('E', 'B')).toBeFalsy();
     });
+
+    it('graph.getDfsPath() - Log Path?: A -> G', () => {
+        expect(graph.getDfsPath('A', 'G')).toEqual(["A", "D", "F", "B", "G"]);
+    });
 });
 
 describe('graph.hasBfs()', () => {
@@ -73,5 +77,9 @@ describe('graph.hasBfs()', () => {
 
     it('graph.hasBfs() - Has Path?: E -> B', () => {
         expect(graph.hasPathBfs('E', 'B')).toBeFalsy();
+    });
+
+    it('graph.getDfsPath() - Log Path?: A -> G', () => {
+        expect(graph.getBfsPath('A', 'G')).toEqual(["A", "B", "C", "D", "G"]);
     });
 });

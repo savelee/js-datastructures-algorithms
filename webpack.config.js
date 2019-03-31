@@ -64,6 +64,12 @@ const plugins = [
     chunks: ['app'],
     filename: 'examples/graphs.html'
   }),
+  new HtmlWebpackPlugin({
+    template: 'examples/quicksort.html',
+    inject: true,
+    chunks: ['app'],
+    filename: 'examples/quicksort.html'
+  }),
   new webpack.LoaderOptionsPlugin({
     options: {
       tslint: {
