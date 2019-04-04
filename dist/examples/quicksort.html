@@ -14,5 +14,44 @@
 <script type="text/javascript" src="../app.bundle.js"></script></body>
 <script>
 
+let sorters = new Library.Sorters();
+let array = [1,5,7,6,4,3,2];
+
+console.log(sorters.quicksort(array, 0, array.length));
+
+/*
+
+function quicksort(pivot, array) {
+
+    // stop condition, recursive function
+    if (pivot <= 1) {
+        return;
+    }
+
+    let leftArr = [];
+    let rightArr = [];
+
+    for (let i = 0; i <= array.length; i++) {
+        let left = array[i];
+        let right = array[array.length-1];
+        if(Number.isInteger(left) && Number.isInteger(right)){
+            if (left >= array[pivot]) {
+                rightArr.push(left);
+            } else {
+                leftArr.push(left);
+            }
+        }
+    }
+
+    let newPivot = Math.ceil(leftArr.length/2);
+    leftArr = leftArr.concat(rightArr);
+    console.log(leftArr);
+
+    quicksort(newPivot, leftArr);
+}
+
+quicksort(Math.ceil(array.length/2), array);
+*/
+
 </script>
 </html>

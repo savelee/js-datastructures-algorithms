@@ -70,6 +70,12 @@ const plugins = [
     chunks: ['app'],
     filename: 'examples/quicksort.html'
   }),
+  new HtmlWebpackPlugin({
+    template: 'examples/hackerrank/twostrings.html',
+    inject: true,
+    chunks: ['app'],
+    filename: 'examples/hackerrank/twostrings.html'
+  }),
   new webpack.LoaderOptionsPlugin({
     options: {
       tslint: {

@@ -30,34 +30,50 @@ export declare class Graph {
     addNode(): void;
     addEdge(): void;
     /**
-     * Check if Path exist via Depth First Search
+      * Log Breadth First Path from one node to another
+      * Go wide, and first check all neighbor nodes. (adjacents) before going deep.
+      * @param {string} startId - The Node Id to start searching from
+      * @param {string} destinationId - The Node Id that needs to be found
+      * @returns {array} history - return a DFS array
+      */
+    getBfsPath(startId: string, destinationId: string): Array<string>;
+    /**
+     * Log Depth First Path from one node to another
      * Go deep into nodes, before exploring other nodes.
-     * Recursive Function
      * @param {string} startId - The Node Id to start searching from
      * @param {string} destinationId = The Node Id that needs to be found
-     * @returns {boolean} pathExists = return true if a path was found
+     * @returns {array} history - return a DFS array
+     */
+    getDfsPath(startId: string, destinationId: string): Array<string>;
+    /**
+     * Check if Path exist via Depth First Search
+     * Go deep into nodes, before exploring other nodes.
+     * Using a Stack
+     * @param {string} startId - The Node Id to start searching from
+     * @param {string} destinationId - The Node Id that needs to be found
+     * @returns {boolean} pathExists - return true if a path was found
      */
     hasPathDfs(startId: string, destinationId: string): boolean;
     /**
-     * Check if Path exist via Depth First Search
-     * Go deep into nodes, before exploring other nodes.
-     * Recursive Function
-     * @param {GraphNode} source - The Node to start searching from
-     * @param {GraphNode} destination - The Node that needs to be found
-     * @param {SimpleDict} visited - A Simple Dictionary holding the references to the visisted vertices
-     * @returns {boolean} pathExists - return true if a path was found
-     */
-    private _hasPathDfs;
-    /**
      * Check if Path exist via Breath First Search
      * Go wide, and first check all neighbor nodes. (adjacents) before going deep.
-     * Need a Queue for this
+     * Using a Queue
      * @param {string} startId - The Node Id to start searching from
-     * @param {string} destinationId = The Node Id that needs to be found
-     * @returns {boolean} pathExists = return true if a path was found
+     * @param {string} destinationId - The Node Id that needs to be found
+     * @returns {boolean} pathExists - return true if a path was found
      */
     hasPathBfs(startId: string, destinationId: string): boolean;
     /**
+      * Check if Path exist via Depth First Search
+      * Go deep into nodes, before exploring other nodes.
+      * Using Stacks
+      * @param {GraphNode} source - The Node to start searching from
+      * @param {GraphNode} destination - The Node that needs to be found
+      * @param {SimpleDict} visited - A Simple Dictionary holding the references to the visisted vertices
+      * @returns {boolean} pathExists - return true if a path was found
+      */
+    private _dfs;
+    /**
      * Check if Path exist via Breath First Search
      * Go wide, and first check all neighbor nodes. (adjacents) before going deep.
      * Need a Queue for this
@@ -66,5 +82,5 @@ export declare class Graph {
      * @param {SimpleDict} visited - A Simple Dictionary holding the references to the visisted vertices
      * @returns {boolean} pathExists - return true if a path was found
      */
-    private _hasPathBfs;
+    private _bfs;
 }

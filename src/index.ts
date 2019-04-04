@@ -7,8 +7,10 @@ import { HashTable } from "./ts/datastructures/HashTable";
 import { BinarySearchTree } from "./ts/datastructures/Tree";
 import { Graph } from "./ts/datastructures/Graph";
 import { SimpleDict } from "./ts/datastructures/SimpleDict";
+
 import { Sorters } from "./ts/algorithms/Sorters";
+import { SubStringSet } from "./ts/hackerrank/TwoStrings";
 
 module.exports =  { Stack, Queue, LinkedList, Set, Map,
     HashTable, BinarySearchTree, Graph, SimpleDict,
-    Sorters}
+    Sorters, SubStringSet}
