@@ -126,7 +126,7 @@ export class LinkedList {
                 previous.next = newNode;
             }
 
-            console.log(this.values());
+            // console.log(this.values());
             this.total++;
         } else {
             isInserted = false;
@@ -226,7 +226,7 @@ export class LinkedList {
         let isRemoved = false;
         if (index < 0) {
             // throw "Can't remove, because item is not in the LinkedList.";
-            console.error("Can't remove, because item is not in the LinkedList.");
+            // console.error("Can't remove, because item is not in the LinkedList.");
         } else {
             let current = this.getHead();
 

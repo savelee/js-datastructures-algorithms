@@ -71,6 +71,18 @@ const plugins = [
     filename: 'examples/quicksort.html'
   }),
   new HtmlWebpackPlugin({
+    template: 'examples/linearsearch.html',
+    inject: true,
+    chunks: ['app'],
+    filename: 'examples/linearsearch.html'
+  }),
+  new HtmlWebpackPlugin({
+    template: 'examples/binarysearch.html',
+    inject: true,
+    chunks: ['app'],
+    filename: 'examples/binarysearch.html'
+  }),
+  new HtmlWebpackPlugin({
     template: 'examples/hackerrank/twostrings.html',
     inject: true,
     chunks: ['app'],

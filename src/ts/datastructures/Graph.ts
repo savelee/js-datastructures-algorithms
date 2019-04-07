@@ -58,7 +58,7 @@ export class Graph {
             this.vertices[node.id] = node;
         }
 
-        console.log(this.vertices);
+        // console.log(this.vertices);
     }
 
 

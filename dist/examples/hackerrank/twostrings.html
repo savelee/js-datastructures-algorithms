@@ -15,30 +15,37 @@
 <script type="text/javascript" src="../../app.bundle.js"></script></body>
 <script>
 
-let s1 = 'HiLee';
-let s2 = 'Hi Lee';
+let s1 = 'hi';
+let s2 = 'lee';
 
-let arr1 = s1.split('');
-let arr2 = s2.split('');
-let set1 = new Library.SubStringSet();
-let set2 = new Library.SubStringSet();
+function twoStrings(s1, s2) {
+    let arr1 = s1.split('');
+    let arr2 = s2.split('');
+    let set1 = new Library.SubStringSet();
+    let set2 = new Library.SubStringSet();
 
-for (let i = 0; i < arr1.length; i++) {
-    set1.add(arr1[i]);
+    for (let i = 0; i < arr1.length; i++) {
+        set1.add(arr1[i]);
+    }
+
+    for (let j = 0; j < arr2.length; j++) {
+        set2.add(arr2[j]);
+    }
+
+    let intersection = set1.intersection(set2);
+
+    //if (JSON.stringify(intersection) == JSON.stringify(set2)) {
+    if (intersection.size() > 0) {
+        return "YES";
+    } else {
+        return "NO";
+    }
+
 }
 
-for (let j = 0; j < arr2.length; j++) {
-    set2.add(arr2[j]);
-}
+console.log(
+twoStrings(s1, s2)
+);
 
-let intersection = set1.intersection(set2);
-console.log(JSON.stringify(intersection));
-console.log(JSON.stringify(set2));
-
-if ( JSON.stringify(intersection) == JSON.stringify(set2)) {
-    console.log('Yes')
-} else {
-    console.log('No');
-}
 </script>
 </html>

@@ -360,7 +360,7 @@ export class BinarySearchTree {
         if (opt.method) {
             method = opt.method.toLowerCase();
         }
-        console.log(method);
+        // console.log(method);
         switch (method) {
             case "inorder":
                 array = this.inorder();
@@ -390,7 +390,7 @@ export class BinarySearchTree {
             // check if there's a BST
             // and if there are values
             // in it
-            console.log("root = null");
+            // console.log("root = null");
             return null;
         } else {
             let result = new Array();
@@ -515,7 +515,7 @@ export class BinarySearchTree {
                 }
                 if (node.right != null) {
                     // console.log(node.key + " has a right node: " + node.right.key)
-            
+
                     // when there is a right node
                     // we can put it to the queue
                     // so the while loop won't stop

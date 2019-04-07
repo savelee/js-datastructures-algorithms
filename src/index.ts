@@ -9,8 +9,11 @@ import { Graph } from "./ts/datastructures/Graph";
 import { SimpleDict } from "./ts/datastructures/SimpleDict";
 
 import { Sorters } from "./ts/algorithms/Sorters";
+import { Searchers } from "./ts/algorithms/Searchers";
+
 import { SubStringSet } from "./ts/hackerrank/TwoStrings";
+
 
 module.exports =  { Stack, Queue, LinkedList, Set, Map,
     HashTable, BinarySearchTree, Graph, SimpleDict,
-    Sorters, SubStringSet}
+    Sorters, Searchers, SubStringSet}
