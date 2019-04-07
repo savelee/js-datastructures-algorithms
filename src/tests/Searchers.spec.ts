@@ -7,10 +7,10 @@ describe('Linear Search', () => {
     it('searcher.linear(array, s) - Find a value in an array.', () => {
         expect(searcher.linear(array1, 'lee')).toEqual(0);
     });
-    it('searcher.linear(array, s) -Find a value in an array.', () => {
+    it('searcher.linear(array, s) - Find a value in an array.', () => {
         expect(searcher.linear(array, '3')).toEqual(2);
     });
-    it('searcher.linear(array, s) -Can not find a value in an array.', () => {
+    it('searcher.linear(array, s) - Can not find a value in an array.', () => {
         expect(searcher.linear(array, '6')).toEqual(-1);
     });
 });

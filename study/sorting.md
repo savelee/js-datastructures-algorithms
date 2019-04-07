@@ -52,6 +52,6 @@ What's nice about Mergesort is always fast, always O(nlogn), it does take O(n) i
 
 ## Bubble Sort
 
-## Insertion Sort
-
-## Selection Sort
+Bubble sorting is the simplest sorting algorithm, it simply iterates over
+the entire array and swaps elements if one is bigger than the other.
+Problem is, you keep on swapping.

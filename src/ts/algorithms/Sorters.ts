@@ -28,6 +28,25 @@ export class Sorters {
         return this._quicksort(unsortedArray, 0, unsortedArray.length - 1);
     }
 
+    /**
+     * BubbleSort - O(n^2)
+     * Bubble sorting is the simplest sorting algorithm, it simply iterates over
+     * the entire array and swaps elements if one is bigger than the other.* @param {Array<number} unsortedArray
+     * @returns {Array<number} sorted array
+     */
+    public bubblesort(array: Array<number>): Array<number> {
+        // loop over all items
+        for (let i = 0; i < array.length; i++) {
+            // loop again to get the next
+            for (let j = 0; j <= i; j++) {
+                if (array[i] < array[j]) {
+                    this._swap(array, i , j);
+                }
+            }
+        }
+        return array;
+    }
+
 
     /**
      * Mergesort - O(nlog(n))
