@@ -1,12 +1,11 @@
 # Sorting
 
-Algorithm | Time complexity | Space complexity
-Countsort | O(k+n) | O(k) 
-Quicksort | O(nlog(n)) | O(nlog(n))
-Mergesort | O(nlog(n)) | O(n)
-Bubble Sort | O(n^2) | O(n^2)
-Insertion Sort | O(n^2) | O(n^2)
-Selection Sort | O(n^2) | O(n^2)
+* Countsort | O(k+n) | O(k) 
+* Quicksort | O(nlog(n)) | O(nlog(n))
+* Mergesort | O(nlog(n)) | O(n)
+* Bubble Sort | O(n^2) | O(n^2)
+* Insertion Sort | O(n^2) | O(n^2)
+* Selection Sort | O(n^2) | O(n^2)
 
 ## Countsort
 
@@ -36,6 +35,7 @@ Mergesort works by diving the array into subarrays until each array has only
 one element. 
 It then starts merging it again by comparing left to right, and picking it in the right order. 
 
+```
 For example, it first divides:
 1,3,3,8,6,1,0,9
 1,3,3,8 -- 6,1,0,9
@@ -47,6 +47,7 @@ Then it merges:
 0,1,6,9
 1,3,3,8 -- 0,1,6,9
 0,1,1,3,3,6,8,9
+```
 
 What's nice about Mergesort is always fast, always O(nlogn), it does take O(n) in space.
 

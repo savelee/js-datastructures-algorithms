@@ -15,7 +15,7 @@ These Data Structures are exposed on global object: `Library`.
 These Algorithms are exposed on global object: `Library`.
 
 * [Sorting Algorithms](https://github.com/savelee/js-datastructures-algorithms/blob/master/src/ts/algorithms/Sorters.ts) & [Notes](https://github.com/savelee/js-datastructures-algorithms/blob/master/study/sorting.md)
-* * [Searching Algorithms](https://github.com/savelee/js-datastructures-algorithms/blob/master/src/ts/algorithms/Searchers.ts) & [Notes](https://github.com/savelee/js-datastructures-algorithms/blob/master/study/searching.md)
+* [Searching Algorithms](https://github.com/savelee/js-datastructures-algorithms/blob/master/src/ts/algorithms/Searchers.ts) & [Notes](https://github.com/savelee/js-datastructures-algorithms/blob/master/study/searching.md)
 
 ## Directory Structure
 
