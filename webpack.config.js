@@ -65,10 +65,10 @@ const plugins = [
     filename: 'examples/graphs.html'
   }),
   new HtmlWebpackPlugin({
-    template: 'examples/quicksort.html',
+    template: 'examples/sorting.html',
     inject: true,
     chunks: ['app'],
-    filename: 'examples/quicksort.html'
+    filename: 'examples/sorting.html'
   }),
   new HtmlWebpackPlugin({
     template: 'examples/linearsearch.html',
