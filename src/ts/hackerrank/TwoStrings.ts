@@ -16,8 +16,10 @@ export class SubStringSet {
         let isExist = false;
         // TODO do a check on space.
         if (!this.has(value)) {
-            this.items[value] = value;
+            this.items[value] = 1;
             this.total++;
+        } else {
+            this.items[value]++;
         }
         return isExist;
     }
@@ -53,7 +55,13 @@ export class SubStringSet {
 
         for (let myVal in otherSet.items) {
             if (this.has(myVal)) {
-                newSet.add(myVal);
+                // we need the lowest count
+                if (otherSet.items[myVal] > this.items[myVal]) {
+                    newSet.items[myVal] = this.items[myVal]
+                } else {
+                    newSet.items[myVal] = otherSet.items[myVal]
+                }
+                newSet.total++;
             }
         }
 

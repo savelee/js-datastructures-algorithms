@@ -88,6 +88,19 @@ const plugins = [
     chunks: ['app'],
     filename: 'examples/hackerrank/twostrings.html'
   }),
+  new HtmlWebpackPlugin({
+    template: 'examples/hackerrank/linkedlists.html',
+    inject: true,
+    chunks: ['app'],
+    filename: 'examples/hackerrank/linkedlists.html'
+  }),
+  new HtmlWebpackPlugin({
+    template: 'examples/hackerrank/trees.html',
+    inject: true,
+    chunks: ['app'],
+    filename: 'examples/hackerrank/trees.html'
+  } 
+  ),
   new webpack.LoaderOptionsPlugin({
     options: {
       tslint: {

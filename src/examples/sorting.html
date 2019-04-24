@@ -25,36 +25,50 @@ console.log(sorters.bubblesort(array)); // [0, 1, 1, 3, 3, 6, 8, 9];
 
 /*
 
-function quicksort(pivot, array) {
+function quicksort(array) {
+  return _quicksort(array, 0, array.length-1);
+} 
+function _quicksort(array, beginPos, endPos) {
+  let i = beginPos;
+  let j = endPos;
 
-    // stop condition, recursive function
-    if (pivot <= 1) {
-        return;
+  if (array.length > 1)  {
+    let pivot = Math.floor(beginPos+endPos/2);
+    if(pivot > array.length-1) return;
+
+    while(i <= j) {
+      // we will loop through all the items, bringing the
+      // leftPos and the rightPos closer
+      while (parseInt(array[i]) < parseInt(array[pivot])) {
+        i++;		
+      }
+      while (parseInt(array[j]) > parseInt(array[pivot])) {
+        j--;
+      }
+      if (i <= j) {
+        swap(array, i, j);
+        i++;
+        j--;
+      }
     }
 
-    let leftArr = [];
-    let rightArr = [];
+    if (beginPos < j) _quicksort(array, beginPos, j);
+    if (i < endPos) _quicksort(arr, i, endPos);
+    
+    return array;
+  }
 
-    for (let i = 0; i <= array.length; i++) {
-        let left = array[i];
-        let right = array[array.length-1];
-        if(Number.isInteger(left) && Number.isInteger(right)){
-            if (left >= array[pivot]) {
-                rightArr.push(left);
-            } else {
-                leftArr.push(left);
-            }
-        }
-    }
-
-    let newPivot = Math.ceil(leftArr.length/2);
-    leftArr = leftArr.concat(rightArr);
-    console.log(leftArr);
-
-    quicksort(newPivot, leftArr);
 }
 
-quicksort(Math.ceil(array.length/2), array);
+function swap(array, leftPos, rightPos) {
+	let temp = array[leftPos];
+	array[leftPos] = array[rightPos];
+  array[rightPos] = temp;
+}
+
+let arr = [1,1,0,8,9];
+console.log(quicksort(arr));
+
 */
 
 </script>

@@ -12,8 +12,12 @@ import { Sorters } from "./ts/algorithms/Sorters";
 import { Searchers } from "./ts/algorithms/Searchers";
 
 import { SubStringSet } from "./ts/hackerrank/TwoStrings";
-
+import { SinlyLinkedList } from "./ts/hackerrank/LinkedList";
+import { DoublyLinkedList } from "./ts/hackerrank/LinkedList";
+//import { Tree } from "./ts/hackerrank/Trees";
 
 module.exports =  { Stack, Queue, LinkedList, Set, Map,
     HashTable, BinarySearchTree, Graph, SimpleDict,
-    Sorters, Searchers, SubStringSet}
+    Sorters, Searchers, SubStringSet, SinlyLinkedList, DoublyLinkedList,
+    //Tree
+}

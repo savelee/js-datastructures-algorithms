@@ -6,7 +6,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>
-    Hackerrank Examples: TwoStrings
+    Examples: SinlyLinkedList Hackerrank
   </title>
 </head>
 
@@ -14,8 +14,40 @@
   Look in JS Console.
 </body>
 <script>
+const ll = new Library.SinlyLinkedList();
+ll.insert('3'); //0
+ll.insert('2'); //1
+ll.insert('0'); //2
+ll.insert('1',2);  // insert at position 2 
 
 
+const dll = new Library.DoublyLinkedList();
+dll.insert(1);
+dll.insert(1); 
+dll.insert(2);
+dll.insert(89);
+dll.insert(2);
+dll.insert(89);
+dll.insert(1);
+dll.insert(90);
+dll.insert(90);
+
+const dll2 = new Library.DoublyLinkedList();
+dll2.insert(1);
+dll2.insert(2); 
+dll2.insert(5);
+dll2.insert(6);
+dll2.insert(4);
+
+console.log(dll);
+console.log(dll2);
+
+dll2.reverse();
+
+console.log(dll2);
+
+console.log(ll);
+console.log(ll.hasCycle());
 
 </script>
 </html>

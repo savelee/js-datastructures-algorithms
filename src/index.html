@@ -35,6 +35,58 @@
   <h1>Hackerrank</h1>
   <ul>
       <li><a href="./examples/hackerrank/twostrings.html">Two Strings (Set & Intersection solution)</a></li>
+      <li><a href="./examples/hackerrank/linkedlists.html">LinkedLists</a></li>
+     <li><a href="./examples/hackerrank/trees.html">Trees</a></li>  
   </ul>
+
+
+<script>
+
+function quicksort(array) {
+  return _quicksort(array, 0, array.length-1);
+} 
+function _quicksort(array, beginPos, endPos) {
+  let i = beginPos;
+  let j = endPos;
+
+  if (array.length > 1)  {
+    let pivot = Math.floor(beginPos+endPos/2);
+    if(pivot > array.length-1) return;
+
+    while(i <= j) {
+      // we will loop through all the items, bringing the
+      // leftPos and the rightPos closer
+      while (parseInt(array[i]) < parseInt(array[pivot])) {
+        i++;		
+      }
+      while (parseInt(array[j]) > parseInt(array[pivot])) {
+        j--;
+      }
+      if (i <= j) {
+        swap(array, i, j);
+        i++;
+        j--;
+      }
+    }
+
+    if (beginPos < j) _quicksort(array, beginPos, j);
+    if (i < endPos) _quicksort(arr, i, endPos);
+    
+    return array;
+  }
+
+}
+
+function swap(array, leftPos, rightPos) {
+	let temp = array[leftPos];
+	array[leftPos] = array[rightPos];
+  array[rightPos] = temp;
+}
+
+let arr = [1,1,0,8,9];
+console.log(quicksort(arr));
+
+</script>
+
 </body>
 </html>
